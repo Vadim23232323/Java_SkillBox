@@ -3,18 +3,21 @@ public class Cat
 {
     private double originWeight;
     private double weight;
-
     private double minWeight;
     private double maxWeight;
     private double amountMeel;
+    public static int count = 0;
+    public static final int COUNT_EYE = 2;
+    public static final double MIN_WEIGT = 1000.0;
+    public static final double MAX_WEIGHT = 9000.0;
+
+
 
     public Cat()
     {
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
-        minWeight = 1000.0;
-        maxWeight = 9000.0;
-
+        count++;
     }
 
     public void meow()
@@ -53,12 +56,16 @@ public class Cat
         System.out.println("Cat cходил в туалет ");
     }
 
+    public void setCatColorTypes(CatСolorTypes type)
+    {
+
+    }
     public String getStatus()
     {
-        if(weight < minWeight) {
+        if(weight < MIN_WEIGT) {
             return "Dead";
         }
-        else if(weight > maxWeight) {
+        else if(weight > MAX_WEIGHT) {
             return "Exploded";
         }
         else if(weight > originWeight) {
@@ -67,5 +74,11 @@ public class Cat
         else {
             return "Playing";
         }
+    }
+
+    public static Integer getCount()
+    {
+        System.out.println("Количество котов: " + count);
+        return count;
     }
 }

@@ -35,6 +35,7 @@ public class Loader
             System.out.println("Статус Мурки : " + murka.getStatus());
 
 
+
         // ############################################################################################################
         // Lessons 2
         System.out.println("Вес Мурки до похода в туалет: " + murka.getWeight());
@@ -43,21 +44,35 @@ public class Loader
 
         System.out.println("Вес Мурки после похода в туалет: " + murka.getWeight());
 
-        murka.feed(300.0);
-        murka.feed(200.0);
-        murka.feed(100.0);
+//        murka.feed(300.0);
+//
+//        murka.feed(200.0);
+//
+//        murka.feed(100.0);
+
         murka.mealAmount();
 
+        // ############################################################################################################
+        // Lessons 3
+
+        Cat.getCount();
 
 
+        if (murka.getStatus()=="Exploded" ||  murka.getStatus()=="Dead") {
+            Cat.count--;
+        }
+        if (vasya.getStatus()=="Exploded" ||  vasya.getStatus()=="Dead") {
+            Cat.count--;
+            vasya.getStatus();
+        }
 
-//        Computer myNotebook = new Computer();
-//
-//        myNotebook.processor = new Processor();
-//
-//        myNotebook.processor.coreCount=4;
-//
-//        myNotebook.processor.frequency=2200;
+        Cat.getCount();
+
+        // ############################################################################################################
+        // Lessons 4
+
+        
+
 
     }
 }
