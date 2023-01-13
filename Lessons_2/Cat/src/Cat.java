@@ -6,6 +6,7 @@ public class Cat
 
     private double minWeight;
     private double maxWeight;
+    private double amountMeel;
 
     public Cat()
     {
@@ -26,7 +27,15 @@ public class Cat
     {
         weight = weight + amount;
         System.out.println("Feed");
+        amountMeel=amountMeel+amount;
     }
+
+    public Double mealAmount()
+    {
+        System.out.println("Cумма съеденной еды " + amountMeel);
+        return amountMeel;
+    }
+
 
     public void drink(Double amount)
     {
@@ -36,6 +45,12 @@ public class Cat
     public Double getWeight()
     {
         return weight;
+    }
+
+    public void goToTheToilet()
+    {
+        weight = weight - 35;
+        System.out.println("Cat cходил в туалет ");
     }
 
     public String getStatus()
