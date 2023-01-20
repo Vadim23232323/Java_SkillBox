@@ -5,6 +5,7 @@ public class Cat
     private double weight;
     private double minWeight;
     private double maxWeight;
+    private String color;
     private double amountMeel;
     public static int count = 0;
     public static final int COUNT_EYE = 2;
@@ -18,6 +19,16 @@ public class Cat
         weight = 1500.0 + 3000.0 * Math.random();
         originWeight = weight;
         count++;
+    }
+    public Cat (Double weight) {
+
+        this.weight = weight;
+    }
+
+    public void setColor(String color) {
+        this.color=color;
+    }public String getColor() {
+        return color;
     }
 
     public void meow()
@@ -47,6 +58,7 @@ public class Cat
 
     public Double getWeight()
     {
+
         return weight;
     }
 
