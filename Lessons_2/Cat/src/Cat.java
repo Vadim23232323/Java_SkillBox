@@ -2,10 +2,11 @@
 public class Cat
 {
     private double originWeight;
-    private double weight;
+    public double weight;
     private double minWeight;
     private double maxWeight;
     private String color;
+    private String name;
     private double amountMeel;
     public static int count = 0;
     public static final int COUNT_EYE = 2;
@@ -20,11 +21,11 @@ public class Cat
         originWeight = weight;
         count++;
     }
-    public Cat (Double weight) {
+    public Cat (double weight, String name) {
 
         this.weight = weight;
+        this.name = name;
     }
-
     public void setColor(String color) {
         this.color=color;
     }public String getColor() {
@@ -56,6 +57,11 @@ public class Cat
         weight = weight + amount;
     }
 
+
+    public String getName()
+    {
+        return name;
+    }
     public Double getWeight()
     {
 

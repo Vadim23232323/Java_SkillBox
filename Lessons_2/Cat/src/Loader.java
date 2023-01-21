@@ -75,9 +75,12 @@ public class Loader
         // ############################################################################################################
         // Lessons 5
 
-            Cat tedi = new Cat(1100.00);
+        Cat Miha = new Cat(1100.00,"Miha");
 
+        System.out.println("Имя " + Miha.getName() + " Вес " + Miha.weight);
 
+        Cat Tedi = new Cat(Miha.weight, Miha.getName());
 
+        System.out.println("Имя " + Tedi.getName() + " Вес " + Tedi.weight);
     }
 }
