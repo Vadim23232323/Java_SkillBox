@@ -8,7 +8,7 @@ public class Airportblr {
 
         System.out.println("Модели самолетов в аиропорте: " + airport.getAllAircrafts());
 
-        System.out.println("Количество самолетов в аиропорте: " + airport.getAllAircrafts().size());
+        System.out.println("Количество самолетов в аиропорте BLR: " + airport.getAllAircrafts().size());
 
 
 
