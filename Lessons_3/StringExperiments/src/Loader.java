@@ -5,7 +5,7 @@ public class Loader {
 //         earnings.getEarnings();
 //         earnings.getAmountEarnings();
 
-//        // Задание №3, №4.3
+//       // Задание №3, №4.3
 //           FullName fullName = new FullName();
 //
 //           fullName.setFullName();
@@ -14,13 +14,18 @@ public class Loader {
 //
 //           fullName.getFullNameRegularExpressions();
 
-//        // Задание #4.2
+//      // Задание #4.2
 //        English english = new English();
 //        english.getTextToWords();
 
-          Phone phone = new Phone();
-          phone.setPhoneNumber();
-          phone.formatPhone();
+        // Задание 4.4
+//          Phone phone = new Phone();
+//          phone.setPhoneNumber();
+//          phone.formatPhone();
+
+        // Задание 5.1
+        Birthday vadim = new Birthday();
+        vadim.getBirthday();
 
     }
 }
