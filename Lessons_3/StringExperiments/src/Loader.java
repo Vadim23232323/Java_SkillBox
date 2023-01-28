@@ -15,8 +15,12 @@ public class Loader {
 //           fullName.getFullNameRegularExpressions();
 
 //        // Задание #4.2
-        English english = new English();
-        english.getTextToWords();
+//        English english = new English();
+//        english.getTextToWords();
+
+          Phone phone = new Phone();
+          phone.setPhoneNumber();
+          phone.formatPhone();
 
     }
 }
