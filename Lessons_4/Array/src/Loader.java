@@ -17,7 +17,8 @@ public class Loader {
 //        Array_list array_list = new Array_list();
 //        array_list.getMenu();
 
-        // Задание 5.5
+        // Задание 5.5 Программа для хранения адресов электронной почты.
+        // Адреса можно добавлять через консоль командой ADD и печатать весь список командой LIST.
         Tree_set tree_set = new Tree_set();
         tree_set.getMenu();
 

@@ -1,6 +1,8 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class Tree_set {
 
@@ -12,13 +14,17 @@ public class Tree_set {
     Scanner scanElement = new Scanner(System.in);
     Scanner scanner = new Scanner(System.in);
     String email;
-    int  command = 0;
+    boolean correctEmailFormat;
+    int command = 0;
+    private Pattern pattern;
+    private Matcher matcher;
 
     //Меню
     public void getMenu() {
         System.out.println("Меню команд: " + ANSI_GREEN + "\" \n\t 1. LIST " + ANSI_RESET + "- Выводит список email адресов " +
                 ANSI_GREEN + "\" \n\t 2. ADD " + ANSI_RESET + "- Добавляет email адресов в список дел " +
                 ANSI_GREEN + "\" \n\t 3. EXIT " + ANSI_RESET + "- Выход из приложения.");
+
         setCommand();
     }
 
@@ -53,19 +59,25 @@ public class Tree_set {
 
     // Добавление записи в TreeSet из консоли
     public TreeSet<String> setAddTreeSet() {
-        String emailFormat;
-        System.out.println("Введите email адрес:");
+
+        System.out.println("Введите email адрес, " +
+                "email адрес должен соответствовать маске примера [пример: google@gmail.com]: ");
         email = scanElement.nextLine();
-        emailFormat = String.valueOf(email.split("@\\.?"));
-        System.out.println("Форматированный" + emailFormat);
-        emailingSet.add(email);
-        System.out.println("-------------------------------------------------------------------");
-        System.out.println("Email: " + ANSI_GREEN  + email + ANSI_RESET + " добавлен в список ");
-        System.out.println("-------------------------------------------------------------------");
+        setSearch(email);
+        if (correctEmailFormat) {
+            emailingSet.add(email);
+            System.out.println("-------------------------------------------------------------------");
+            System.out.println("Email: " + ANSI_GREEN + email + ANSI_RESET + " добавлен в список ");
+            System.out.println("-------------------------------------------------------------------");
+        } else {
+            System.out.println("-------------------------------------------------------------------");
+            System.out.println("Email введе с ошибками!!! Проверьте правильность введеного email и повторите попытку. ");
+            System.out.println("-------------------------------------------------------------------");
+        }
+
         command = 0;
         return emailingSet;
     }
-
 
     // Вывод списка в консоль
     public void printTreeSet() {
@@ -80,6 +92,22 @@ public class Tree_set {
         }
         System.out.println("-------------------------------------------------------------------");
         getMenu();
+    }
+
+    // Проверка email на соответсвие маски *@*.*
+    public boolean setSearch(String email) {
+
+        this.email = email;
+
+        pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
+                "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        matcher = pattern.matcher(email);
+
+        if (matcher.matches())
+            correctEmailFormat = true;
+        else correctEmailFormat = false;
+
+        return correctEmailFormat;
     }
 
 }
