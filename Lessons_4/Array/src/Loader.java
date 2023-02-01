@@ -14,8 +14,12 @@ public class Loader {
 //        xxx.getX();
 
         // Задание 5.4 Создает список дел, который управляется командами в консоли. Команды: LIST, ADD, EDIT, DELETE.
-        Array_list array_list = new Array_list();
-        array_list.getMenu();
+//        Array_list array_list = new Array_list();
+//        array_list.getMenu();
+
+        // Задание 5.5
+        Tree_set tree_set = new Tree_set();
+        tree_set.getMenu();
 
     }
 }

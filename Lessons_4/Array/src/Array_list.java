@@ -111,7 +111,7 @@ public class Array_list {
         return todoList;
     }
 
-    // Вывод в консоль списка дел
+    // Вывод списка в консоль
     public void printArrayList() {
 
         System.out.println(ANSI_GREEN + " Список дел: " + ANSI_RESET);
