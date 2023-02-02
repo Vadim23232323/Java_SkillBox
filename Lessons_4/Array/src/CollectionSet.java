@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-public class Tree_set {
+public class CollectionSet {
 
     // Задает зеленый цвет текста
     public static final String ANSI_GREEN = "\u001B[32m";
@@ -50,7 +50,7 @@ public class Tree_set {
                 System.out.println("-------------------------------------------------------------------");
                 break;
             default:
-                if (command < 0 || command > 6) {
+                if (command < 1 || command > 3) {
                     System.out.println("Введена неверная команда! Введите команду повторно.");
                 }
                 getMenu();

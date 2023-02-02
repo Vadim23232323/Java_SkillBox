@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 // Задание 5.4 Создает список дел, который управляется командами в консоли. Команды: LIST, ADD, EDIT, DELETE.
-public class Array_list {
+public class CollectionList {
 
     // Задает зеленый цвет текста
     public static final String ANSI_GREEN = "\u001B[32m";

@@ -19,8 +19,12 @@ public class Loader {
 
         // Задание 5.5 Программа для хранения адресов электронной почты.
         // Адреса можно добавлять через консоль командой ADD и печатать весь список командой LIST.
-        Tree_set tree_set = new Tree_set();
-        tree_set.getMenu();
+//        CollectionSet tree_set = new CollectionSet();
+//        tree_set.getMenu();
+
+        // Задание 5.6 Программа для хранения адресов электронной почты.
+        CollectionMap collectionMap = new CollectionMap();
+        collectionMap.getMenu();
 
     }
 }
