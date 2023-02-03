@@ -1,9 +1,9 @@
 import java.util.Scanner;
-import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// Задание 5.6 Программа для хранения адресов электронной почты.
 public class CollectionMap {
 
     // Задает зеленый цвет текста
@@ -27,7 +27,6 @@ public class CollectionMap {
         System.out.println("Меню команд: " + ANSI_GREEN + "\" \n\t 1. LIST " + ANSI_RESET + "- Выводит телефонную книгу." +
                 ANSI_GREEN + "\" \n\t 2. ADD " + ANSI_RESET + "- Добавляет новый контакт в телефонную книгу " +
                 ANSI_GREEN + "\" \n\t 3. EXIT " + ANSI_RESET + "- Выход из приложения.");
-
         setCommand();
     }
 
@@ -90,7 +89,6 @@ public class CollectionMap {
                 System.out.println("-------------------------------------------------------------------");
             }
         }
-
         return phoneBook;
     }
 
@@ -117,17 +115,18 @@ public class CollectionMap {
         if (phoneBook.containsKey(line)) {
             System.out.println("-------------------------------------------------------------------");
             System.out.println("Такой контакт уже существует: Имя: " + phoneBook.get(line) + " | " + "Телефон: " + line);
+            System.out.println("-------------------------------------------------------------------");
         }
         if (phoneBook.containsValue(line)) {
             System.out.println("-------------------------------------------------------------------");
             for (String bookEntry : phoneBook.keySet()) {
                 if (phoneBook.get(bookEntry).equals(line)) {
                     System.out.println("Такой контакт уже существует: Имя: " + phoneBook.get(bookEntry) + " | " + "Телефон: " + bookEntry);
+                    System.out.println("-------------------------------------------------------------------");
                     break;
                 }
             }
         }
-        System.out.println("-------------------------------------------------------------------");
         getMenu();
     }
 

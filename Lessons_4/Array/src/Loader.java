@@ -23,8 +23,12 @@ public class Loader {
 //        tree_set.getMenu();
 
         // Задание 5.6 Программа для хранения адресов электронной почты.
-        CollectionMap collectionMap = new CollectionMap();
-        collectionMap.getMenu();
+//        CollectionMap collectionMap = new CollectionMap();
+//        collectionMap.getMenu();
+
+        // Задание 5.7 Генератор «красивых» автомобильных номеров и методов поиска элементов в коллекциях
+        CarCollection carCollection = new CarCollection();
+        carCollection.getMenu();
 
     }
 }
