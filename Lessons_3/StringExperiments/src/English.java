@@ -10,19 +10,12 @@ public class English {
             "Minnie is a beautiful cat, but I love her not for her looks. She is my good friend, and I consider her a family member. Some people say that dogs make good friends but cats do not. I would not agree with that. Neither would my cat.";
 
     public void getTextToWords() {
-        String[] wordss = text.split("\\s+");
-        String[] word, words;
+        String[] word = text.split(",?\\.?\\s+");
         int count = 0;
-        for (int i = 0; i < wordss.length; i++) {
-            words = wordss[i].split("\\.");
-            for (int j = 0; j < words.length; j++) {
-                word = words[j].split("\\,");
-                for (int k = 0; k < word.length; k++) {
+        for (int i = 0; i < word.length; i++) {
                     count++;
-                    System.out.println("Слово: " + (word[k]));
+                    System.out.println("Слово: " + word[i]);
                 }
-            }
-        }
         System.out.println("Всего количество слов: " + count);
     }
 }
