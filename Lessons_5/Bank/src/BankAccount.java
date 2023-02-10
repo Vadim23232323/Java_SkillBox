@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 
+
 public class BankAccount {
 
     // Задает зеленый цвет текста
@@ -8,7 +9,7 @@ public class BankAccount {
     // Задает стандартный цвет текста
     public static final String ANSI_RESET = "\u001B[0m";
 
-    protected double moneyAccount;
+    protected int moneyAccount;
 
     Scanner scannerMoney = new Scanner(System.in);
 
@@ -40,7 +41,7 @@ public class BankAccount {
     }
 
     // Пополнение счета
-    public void topUpCashAccount() {
+    public void refillAccount() {
 
         System.out.println("Введите сумму в белорусских рублях для пополнения баланса:");
 
@@ -53,12 +54,9 @@ public class BankAccount {
 
     // Печать остатка на счете
     public void printAccountBalance() {
-
-        System.out.println("------------------------------------------------------------------------");
-        System.out.println("Остаток на счете: " + ANSI_GREEN + moneyAccount + " BLR" + ANSI_RESET);
-        System.out.println("------------------------------------------------------------------------");
-
+        System.out.println("Остаток: " + ANSI_GREEN + moneyAccount + " BLR" + ANSI_RESET);
     }
+
 
 
 }
