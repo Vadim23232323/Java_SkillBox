@@ -1,3 +1,5 @@
+package Bank;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -6,13 +8,8 @@ public class Menu {
     public static final String ANSI_GREEN = "\u001B[32m";
     // Çàäàåò ñòàíäàğòíûé öâåò òåêñòà
     public static final String ANSI_RESET = "\u001B[0m";
-
-    private int command = 0;
-
     BankAccount bankAccount = new BankAccount();
-
     CardAccount cardAccount = new CardAccount();
-
     DepositAccount depositAccount = new DepositAccount();
 
     public void getMenu() {
@@ -33,7 +30,7 @@ public class Menu {
 
         Scanner scanner = new Scanner(System.in);
 
-        command = 0;
+        int command = 0;
 
         System.out.println("Ââåäèòå ¹ êîìàíäû: ");
 
@@ -42,14 +39,9 @@ public class Menu {
         switch (command) {
             case 1:
                 System.out.println("########################################################################");
-                System.out.println("ÎÑÒÀÒÎÊ ÍÀ Ñ×ÅÒÅ:");
-                bankAccount.printAccountBalance();
-                System.out.println("------------------------------------------------------------------------");
-                System.out.println("ÎÑÒÀÒÎÊ ÍÀ ÊÀĞÒ Ñ×ÅÒÅ:");
-                cardAccount.printAccountBalance();
-                System.out.println("------------------------------------------------------------------------");
-                System.out.println("ÎÑÒÀÒÎÊ ÍÀ ÄÅÏÎÇÈÒÍÎÌ Ñ×ÅÒÅ:");
-                depositAccount.printAccountBalance();
+                bankAccount.printAccountBalance(bankAccount, bankAccount.nameAccount);
+                cardAccount.printAccountBalance(cardAccount, cardAccount.nameAccount);
+                depositAccount.printAccountBalance(depositAccount, depositAccount.nameAccount);
                 System.out.println("########################################################################");
                 getMenu();
             case 2:

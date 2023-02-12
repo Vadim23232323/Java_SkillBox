@@ -1,13 +1,13 @@
-import java.security.PublicKey;
+package Bank;
+
 import java.util.Scanner;
     // // Карточный счёт, при снятии денег с которого взимаеться комиссия 1%
 public class CardAccount extends BankAccount{
 
     Scanner scannerWithdrawCard = new Scanner(System.in);
-
-
+    String nameAccount = "КАРТ CЧЕТЕ";
     // Снятия средств со счета
-    public void withdrawCardAccount () {
+    void withdrawCardAccount () {
 
         int withdrawMoney, commission;
 
@@ -19,7 +19,7 @@ public class CardAccount extends BankAccount{
 
         if (withdrawMoney > moneyAccount || withdrawMoney <= 0) {
             System.out.println("------------------------------------------------------------------------");
-            System.out.println("Недостаточно средств! Баланс вашего счета составляет: " + ANSI_GREEN + moneyAccount + " BLR" + ANSI_RESET);
+            System.out.println("Недостаточно средств! Баланс вашего счета составляет: " + Menu.ANSI_GREEN + moneyAccount + " BLR" + Menu.ANSI_RESET);
             System.out.println("------------------------------------------------------------------------");
         } else {
 
@@ -27,9 +27,9 @@ public class CardAccount extends BankAccount{
 
             System.out.println("------------------------------------------------------------------------");
             System.out.println("Операция завершена успешно!");
-            System.out.println("Сумма снятая со счета: " + ANSI_GREEN + withdrawMoney + " BLR" + ANSI_RESET);
-            System.out.println("Баланс вашего счета составляет: " + ANSI_GREEN + moneyAccount + " BLR" + ANSI_RESET);
-            System.out.println("Комиссия банка составила 1%: " + ANSI_GREEN + commission + " BLR" + ANSI_RESET);
+            System.out.println("Сумма снятая со счета: " + Menu.ANSI_GREEN + withdrawMoney + " BLR" + Menu.ANSI_RESET);
+            System.out.println("Баланс вашего счета составляет: " + Menu.ANSI_GREEN + moneyAccount + " BLR" + Menu.ANSI_RESET);
+            System.out.println("Комиссия банка составила 1%: " + Menu.ANSI_GREEN + commission + " BLR" + Menu.ANSI_RESET);
             System.out.println("------------------------------------------------------------------------");
         }
 
