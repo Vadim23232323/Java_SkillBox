@@ -16,7 +16,7 @@ public class BankAccount {
     Scanner scannerwithdrawMoney = new Scanner(System.in);
 
 
-    // Снятия средств со счета
+    // Снятия средств со счета с условием
     public void withdrawMoneyAccount() {
 
         int withdrawMoney;

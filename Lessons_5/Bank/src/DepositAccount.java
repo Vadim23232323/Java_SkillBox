@@ -4,51 +4,51 @@ import java.util.Date;
 import java.util.Calendar;
 import java.util.Scanner;
 
+    // Депозитный счет с которого нельзя снимать деньги в течение месяца после последнего внесения.
 public class DepositAccount extends BankAccount {
+
+    // Задает зеленый цвет текста
+    public static final String ANSI_GREEN = "\u001B[32m";
+    // Задает стандартный цвет текста
+    public static final String ANSI_RESET = "\u001B[0m";
 
     Scanner scannerWithdrawDeposit = new Scanner(System.in);
 
     DateFormat format = new SimpleDateFormat("HH:mm MM/dd/yyyy");
 
-    Calendar calendar = Calendar.getInstance();
-    Calendar dateOperatin;
+    Calendar dateOperatin = Calendar.getInstance();
+    Calendar dateNext = Calendar.getInstance();
+    Calendar calendar= Calendar.getInstance();
+    Date aaa = new Date();
 
+
+
+    // Снятия средств со счета
     public void withdrawDepositAccount() {
 
-        System.out.println(format.format(dateOperatin.getTime()));
+        dateNext = dateOperatin;
 
-        if (calendar.add(Calendar.MONTH,))
+        dateNext.add(dateNext.MONTH, +1);
 
-//        int withdrawMoney, commission;
-//
-//        System.out.println("Введите сумму в белорусских рублях для снятия средств с депозитного счета: ");
-//
-//        withdrawMoney = scannerWithdrawDeposit.nextInt();
-//
-//        commission = (withdrawMoney*1)/100;
-//
-//        if (withdrawMoney > moneyAccount || withdrawMoney <= 0) {
-//            System.out.println("------------------------------------------------------------------------");
-//            System.out.println("Недостаточно средств! Баланс вашего счета составляет: " + ANSI_GREEN + moneyAccount + " BLR" + ANSI_RESET);
-//            System.out.println("------------------------------------------------------------------------");
-//        } else {
-//
-//            moneyAccount = moneyAccount - withdrawMoney - commission;
-//
-//            System.out.println("------------------------------------------------------------------------");
-//            System.out.println("Операция завершена успешно!");
-//            System.out.println("Сумма снятая со счета: " + ANSI_GREEN + withdrawMoney + " BLR" + ANSI_RESET);
-//            System.out.println("Баланс вашего счета составляет: " + ANSI_GREEN + moneyAccount + " BLR" + ANSI_RESET);
-//            System.out.println("Комиссия банка составила 1%: " + ANSI_GREEN + commission + " BLR" + ANSI_RESET);
-//            System.out.println("------------------------------------------------------------------------");
-//        }
+        calendar.setTime(new Date());
 
+        calendar.add(calendar.MONTH, +2);
+
+        if (calendar.compareTo(dateNext) == 1) {
+            super.withdrawMoneyAccount();
+        } else {
+            System.out.println("------------------------------------------------------------------------");
+            System.out.println("Вы не можете снять средства! \nДля снятие средств необходимо что бы прошел месяц " +
+                    "с момента операции пополнения счета. \nОперация по снятию средств будет доступна: "
+                    + ANSI_GREEN + format.format(dateNext.getTime()) + ANSI_RESET);
+            System.out.println("------------------------------------------------------------------------");
+        }
     }
 
-
+    // Пополнение счета
     public void refillDepositAccount () {
         super.refillAccount();
-        dateOperatin = calendar;
+        dateOperatin.setTime(new Date());
         System.out.println("Дата операции: " + format.format(dateOperatin.getTime()));
     }
 }
