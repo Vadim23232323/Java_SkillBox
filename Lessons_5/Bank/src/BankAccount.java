@@ -57,6 +57,12 @@ public class BankAccount {
         System.out.println("Остаток: " + ANSI_GREEN + moneyAccount + " BLR" + ANSI_RESET);
     }
 
+    boolean send(BankAccount receiver, int amount) {
+        receiver.moneyAccount = receiver.moneyAccount - amount;
+        moneyAccount = moneyAccount + amount;
+        System.out.println("Деньги успешно переведены!");
+        return true;
+    }
 
 
 }

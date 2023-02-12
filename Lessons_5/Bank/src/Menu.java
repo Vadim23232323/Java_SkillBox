@@ -23,7 +23,8 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 5. " + ANSI_RESET + "снятие средств с карт счёта (комиссия 1%)." +
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "пополнить депозитный счёт (без комиссии)." +
                 ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "снятие средств с депозитного счёта (без комиссии)." +
-                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Выход из приложения.");
+                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Перевод с депозитного счета на счет (без комиссии)." +
+                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход из приложения.");
         setCommand();
     }
 
@@ -70,12 +71,15 @@ public class Menu {
                 depositAccount.withdrawDepositAccount();
                 getMenu();
             case 8:
+                bankAccount.send(depositAccount, depositAccount.moneyAccount);
+                getMenu();
+            case 9:
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Приложение завершило работу.");
                 System.out.println("-------------------------------------------------------------------");
                 break;
             default:
-                if (command < 1 || command > 8) {
+                if (command < 1 || command > 9) {
                     System.out.println("Введена неверная команда! Введите команду повторно.");
                 }
                 getMenu();
