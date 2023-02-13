@@ -1,4 +1,4 @@
-package Bank;
+package accounts;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class BankAccount {
 
-    String nameAccount = "CЧЕТЕ";
     int moneyAccount;
     DateFormat format = new SimpleDateFormat("HH:mm MM/dd/yyyy");
     Calendar dateOperatin = Calendar.getInstance();
@@ -17,7 +16,7 @@ public class BankAccount {
 
 
     // Снятия средств со счета с условием
-    void withdrawMoneyAccount() {
+    public void withdrawAccount() {
 
         int withdrawMoney;
 
@@ -41,7 +40,7 @@ public class BankAccount {
     }
 
     // Пополнение счета
-    void refillAccount() {
+    public void refillAccount() {
 
         System.out.println("Введите сумму в белорусских рублях для пополнения баланса:");
 
@@ -55,7 +54,8 @@ public class BankAccount {
     }
 
     // Печать остатка на счетах
-    void printAccountBalance(BankAccount nameAccount, String name) {
+    public void printAccountBalance(BankAccount nameAccount, String name) {
+        System.out.println("------------------------------------------------------------------------");
         System.out.println("Остаток на " + name + ": "+ Menu.ANSI_GREEN + moneyAccount + " BLR" + Menu.ANSI_RESET);
         System.out.println("------------------------------------------------------------------------");
     }

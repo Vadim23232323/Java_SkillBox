@@ -1,11 +1,10 @@
-package Bank;
+package accounts;
 
 import java.util.Scanner;
     // // Карточный счёт, при снятии денег с которого взимаеться комиссия 1%
 public class CardAccount extends BankAccount{
 
     Scanner scannerWithdrawCard = new Scanner(System.in);
-    String nameAccount = "КАРТ CЧЕТЕ";
     // Снятия средств со счета
     void withdrawCardAccount () {
 

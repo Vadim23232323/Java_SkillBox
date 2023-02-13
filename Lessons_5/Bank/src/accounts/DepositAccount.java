@@ -1,4 +1,4 @@
-package Bank;
+package accounts;
 
 import java.util.Date;
 import java.util.Calendar;
@@ -7,7 +7,6 @@ import java.util.Scanner;
     // Депозитный счет с которого нельзя снимать деньги в течение месяца после последнего внесения.
 public class DepositAccount extends BankAccount {
 
-    String nameAccount = "ДЕПОЗИТНОМ CЧЕТЕ";
     Scanner scannerWithdrawDeposit = new Scanner(System.in);
     Calendar dateNext = Calendar.getInstance();
     Calendar calendar= Calendar.getInstance();
@@ -24,7 +23,7 @@ public class DepositAccount extends BankAccount {
         calendar.add(calendar.MONTH, +2);
 
         if (calendar.compareTo(dateNext) == 1) {
-            super.withdrawMoneyAccount();
+            super.withdrawAccount();
         } else {
             System.out.println("------------------------------------------------------------------------");
             System.out.println("Вы не можете снять средства! \nДля снятие средств необходимо что бы прошел месяц " +

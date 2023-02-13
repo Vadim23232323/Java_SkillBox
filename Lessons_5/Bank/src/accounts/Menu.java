@@ -1,4 +1,4 @@
-package Bank;
+package accounts;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class Menu {
     DepositAccount depositAccount = new DepositAccount();
 
     public void getMenu() {
-        System.out.println("Меню команд: " + ANSI_GREEN + "\" \n\t 1. " + ANSI_RESET + "Получить остаток на счете." +
+        System.out.println("Меню команд: " + ANSI_GREEN + "\" \n\t 1. " + ANSI_RESET + "Получить остаток на счетах." +
                 ANSI_GREEN + "\" \n\t 2. " + ANSI_RESET + "пополнить счёт (без комиссии)." +
                 ANSI_GREEN + "\" \n\t 3. " + ANSI_RESET + "снятие средств со счёта (без комиссии)." +
                 ANSI_GREEN + "\" \n\t 4. " + ANSI_RESET + "пополнить карт счёт (без комиссии)." +
@@ -39,16 +39,16 @@ public class Menu {
         switch (command) {
             case 1:
                 System.out.println("########################################################################");
-                bankAccount.printAccountBalance(bankAccount, bankAccount.nameAccount);
-                cardAccount.printAccountBalance(cardAccount, cardAccount.nameAccount);
-                depositAccount.printAccountBalance(depositAccount, depositAccount.nameAccount);
+                bankAccount.printAccountBalance(bankAccount, "CЧЕТЕ");
+                cardAccount.printAccountBalance(cardAccount, "КАРТ CЧЕТЕ");
+                depositAccount.printAccountBalance(depositAccount, "ДЕПОЗИТНОМ CЧЕТЕ");
                 System.out.println("########################################################################");
                 getMenu();
             case 2:
                 bankAccount.refillAccount();
                 getMenu();
             case 3:
-                bankAccount.withdrawMoneyAccount();
+                bankAccount.withdrawAccount();
                 getMenu();
             case 4:
                 cardAccount.refillAccount();
