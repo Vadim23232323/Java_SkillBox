@@ -12,6 +12,7 @@ public class Menu {
     CardAccount cardAccount = new CardAccount();
     DepositAccount depositAccount = new DepositAccount();
 
+    // Меню
     public void getMenu() {
         System.out.println("Меню команд: " + ANSI_GREEN + "\" \n\t 1. " + ANSI_RESET + "Получить остаток на счетах." +
                 ANSI_GREEN + "\" \n\t 2. " + ANSI_RESET + "пополнить счёт (без комиссии)." +
@@ -57,7 +58,7 @@ public class Menu {
                 cardAccount.withdrawCardAccount();
                 getMenu();
             case 6:
-                depositAccount.refillDepositAccount();
+                depositAccount.refillAccount();
                 getMenu();
             case 7:
                 depositAccount.withdrawDepositAccount();

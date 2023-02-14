@@ -8,21 +8,21 @@ import java.util.Scanner;
 
 public class BankAccount {
 
-    int moneyAccount;
+    public int moneyAccount;
     DateFormat format = new SimpleDateFormat("HH:mm MM/dd/yyyy");
     Calendar dateOperatin = Calendar.getInstance();
-    Scanner scannerMoney = new Scanner(System.in);
-    Scanner scannerwithdrawMoney = new Scanner(System.in);
+    public Scanner scannerRefill = new Scanner(System.in);
+    public Scanner scannerWithdraw = new Scanner(System.in);
 
 
-    // Снятия средств со счета с условием
+    // Снятия средств со счета
     public void withdrawAccount() {
 
         int withdrawMoney;
 
         System.out.println("Введите сумму в белорусских рублях для снятия средств со счета: ");
 
-        withdrawMoney = scannerwithdrawMoney.nextInt();
+        withdrawMoney = scannerWithdraw.nextInt();
 
         if (withdrawMoney > moneyAccount || withdrawMoney <= 0) {
             System.out.println("------------------------------------------------------------------------");
@@ -44,19 +44,18 @@ public class BankAccount {
 
         System.out.println("Введите сумму в белорусских рублях для пополнения баланса:");
 
-        moneyAccount = scannerMoney.nextInt();
+        moneyAccount = scannerRefill.nextInt() + moneyAccount;
 
         System.out.println("------------------------------------------------------------------------");
         System.out.println("Остаток на счете после пополнение баланса: " + Menu.ANSI_GREEN + moneyAccount + " BLR" + Menu.ANSI_RESET);
-        dateOperatin.setTime(new Date());
-        System.out.println("Дата операции: " + format.format(dateOperatin.getTime()));
+        printDateOperation();
         System.out.println("------------------------------------------------------------------------");
     }
 
     // Печать остатка на счетах
     public void printAccountBalance(BankAccount nameAccount, String name) {
         System.out.println("------------------------------------------------------------------------");
-        System.out.println("Остаток на " + name + ": "+ Menu.ANSI_GREEN + moneyAccount + " BLR" + Menu.ANSI_RESET);
+        System.out.println("ОСТАТОК НА " + name + ": "+ Menu.ANSI_GREEN + moneyAccount + " BLR" + Menu.ANSI_RESET);
         System.out.println("------------------------------------------------------------------------");
     }
 
@@ -68,5 +67,10 @@ public class BankAccount {
         return true;
     }
 
+    // Дата проведения операции
+    public void printDateOperation () {
+        dateOperatin.setTime(new Date());
+        System.out.println("Дата операции: " + format.format(dateOperatin.getTime()));
+    }
 
 }

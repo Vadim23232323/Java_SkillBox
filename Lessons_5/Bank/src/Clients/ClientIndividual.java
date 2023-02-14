@@ -2,8 +2,10 @@ package Clients;
 
 import accounts.BankAccount;
 
+    // Клиент физическое лицо
 public class ClientIndividual extends Client {
     BankAccount bankAccount = new BankAccount();
+
 
     @Override
     public void refillClientAccount() {

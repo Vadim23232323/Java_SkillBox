@@ -33,8 +33,4 @@ public class DepositAccount extends BankAccount {
         }
     }
 
-    // Пополнение счета
-    void refillDepositAccount () {
-        super.refillAccount();
-    }
 }

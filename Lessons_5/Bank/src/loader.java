@@ -8,7 +8,7 @@ public class loader {
 //        Menu menu = new Menu();
 //        menu.getMenu();
 //
-//
+        // Задание 6.2 Классы представляющие клиентов банка
         MenuClient menuClient = new MenuClient();
         menuClient.getMenu();
 

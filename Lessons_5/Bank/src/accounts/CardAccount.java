@@ -4,15 +4,14 @@ import java.util.Scanner;
     // // Карточный счёт, при снятии денег с которого взимаеться комиссия 1%
 public class CardAccount extends BankAccount{
 
-    Scanner scannerWithdrawCard = new Scanner(System.in);
     // Снятия средств со счета
-    void withdrawCardAccount () {
+    public void withdrawCardAccount () {
 
         int withdrawMoney, commission;
 
-        System.out.println("Введите сумму в белорусских рублях для снятия средств с карт счета: ");
+        System.out.println("Введите сумму в белорусских рублях для снятия средств со счета: ");
 
-        withdrawMoney = scannerwithdrawMoney.nextInt();
+        withdrawMoney = super.scannerWithdraw.nextInt();
 
         commission = (withdrawMoney*1)/100;
 
@@ -33,6 +32,7 @@ public class CardAccount extends BankAccount{
         }
 
     }
+
 
 }
 
