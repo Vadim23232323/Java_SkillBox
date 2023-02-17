@@ -12,9 +12,7 @@ public class Menu {
     Employee manager = new EmployeeManager();
     Employee topManager = new EmployeeTopManager();
 
-
-
-
+    int command;
 
     // Меню
     public void getMenu() {
@@ -25,7 +23,7 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 5. " + ANSI_RESET + "Нанять в компанию операторов" +
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "Нанять в компанию менеджеров" +
                 ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "Нанять в компанию топ-менеджеров" +
-                ANSI_GREEN + "\" \n\t 4. " + ANSI_RESET + "Список сотрудников." +
+                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Увольнение сотрудников." +
                 ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход из приложения.");
         setCommand();
     }
@@ -58,10 +56,16 @@ public class Menu {
                 company.hireAll(operator, "оператора");
                 getMenu();
             case 6:
-                company.hireAll(manager, "менеджера");
+                Scanner scanerEmployee = new Scanner(System.in);
+                System.out.println("Введите кол-во сотрудников для найма: ");
+                int countEmployee = scanerEmployee.nextInt();
+                company.hireAll(manager, "менеджера", countEmployee);
                 getMenu();
             case 7:
                 company.hireAll(topManager, "топ-менеджера");
+                getMenu();
+            case 8:
+                company.fire();
                 getMenu();
             case 9:
                 System.out.println("-------------------------------------------------------------------");

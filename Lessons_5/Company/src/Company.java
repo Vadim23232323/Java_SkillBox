@@ -1,8 +1,10 @@
 import java.util.*;
 import java.util.Scanner;
+
 public class Company {
     private final List<Employee> employees = new ArrayList<Employee>();
 
+    // Найм одного сотрудника
     public void hire(Employee employee, String nameJobTitle) {
         this.employees.add(employee);
         System.out.println("-------------------------------------------------------------------\n" +
@@ -10,6 +12,7 @@ public class Company {
                 "\n-------------------------------------------------------------------");
     }
 
+    // Найм введенного количества сотрудников
     public void hireAll(Employee employee, String nameJobTitle) {
         int countEmployee;
         Scanner scanerEmployee = new Scanner(System.in);
@@ -19,12 +22,40 @@ public class Company {
             this.employees.add(employee);
         }
         System.out.println("-------------------------------------------------------------------\n" +
-                "Вы наняли " + countEmployee +" сотрудников на должность: " + nameJobTitle +
+                "Вы наняли " + countEmployee + " сотрудников на должность: " + nameJobTitle +
                 "\n-------------------------------------------------------------------");
 
     }
 
+    // Перегрузка метода найм введенного количества сотрудников
+    public void hireAll(Employee employee, String nameJobTitle, int countEmployee) {
+        for (int i = 0; i < countEmployee; i++) {
+            employee = new EmployeeManager();
+            this.employees.add(employee);
+        }
+        System.out.println("-------------------------------------------------------------------\n" +
+                "Вы наняли " + countEmployee + " сотрудников на должность: " + nameJobTitle +
+                "\n-------------------------------------------------------------------");
+
+    }
+
+    // Увольнение сотрудника
     public void fire() {
+        int countEmployee;
+        Scanner scanerEmployee = new Scanner(System.in);
+        System.out.println("Введите кол-во сотрудников для увольнения: ");
+        countEmployee = scanerEmployee.nextInt();
+        if (countEmployee > employees.size()) {
+            System.out.println("Вы хотите уволить количество сотрудников больше чем их работает в компании!!!" +
+                    "\n\t В компании работает:" + employees.size());
+        } else {
+            for (int i = 0; i < employees.size() - countEmployee; i++) {
+                int index = (int) (Math.random() * employees.size());
+                Employee fired = employees.get(index);
+                employees.remove(fired);
+            }
+            System.out.println("Уволено: " + countEmployee + " сотрудника компании");
+        }
 
     }
 
@@ -40,23 +71,17 @@ public class Company {
             System.out.println("СПИСОК ПУСТ!!! Добавьте хотя бы одного сотрудника.");
         } else {
             for (Employee employee : employees) {
-                    System.out.println("Зарплата сотрудника: " + Menu.ANSI_GREEN + employee.getMonthSalary() + Menu.ANSI_RESET);
+                System.out.println("Зарплата сотрудника: " + Menu.ANSI_GREEN + employee.getMonthSalary() + Menu.ANSI_RESET);
             }
         }
         System.out.println("-------------------------------------------------------------------");
     }
 
-   List<Employee> getTopSalaryStaff(int count) {
-        for (int i =0; i < count; i++ ) {
+    List<Employee> getTopSalaryStaff(int count) {
+        for (int i = 0; i < count; i++) {
 
         }
         return employees;
-   }
-//
-//	List<Employee> getLowestSalaryStaff(int count){
-//
-//   }
-
-
+    }
 
 }
