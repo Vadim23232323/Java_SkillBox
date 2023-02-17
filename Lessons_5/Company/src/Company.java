@@ -49,7 +49,7 @@ public class Company {
             System.out.println("Вы хотите уволить количество сотрудников больше чем их работает в компании!!!" +
                     "\n\t В компании работает:" + employees.size());
         } else {
-            for (int i = 0; i < employees.size() - countEmployee; i++) {
+            for (int i = 0; i < countEmployee; i++) {
                 int index = (int) (Math.random() * employees.size());
                 Employee fired = employees.get(index);
                 employees.remove(fired);
@@ -64,7 +64,6 @@ public class Company {
     }
 
     public void printArrayList() {
-
         System.out.println(Menu.ANSI_GREEN + " Список зарплат сотрудников: " + Menu.ANSI_RESET);
         System.out.println("-------------------------------------------------------------------");
         if (employees.size() == 0) {
@@ -77,11 +76,47 @@ public class Company {
         System.out.println("-------------------------------------------------------------------");
     }
 
+    //Сортировка по убыванию зарплат сотрудников
     List<Employee> getTopSalaryStaff(int count) {
-        for (int i = 0; i < count; i++) {
+        Collections.sort(employees, new Comparator<Employee>() {
+            public int compare(Employee o1, Employee o2) {
+                return o2.getMonthSalary() - o1.getMonthSalary();
+            }
 
+        });
+        if (count > employees.size()) {
+            System.out.println("Вы хотите вывести зарплаты сотрудников больше чем их работает в компании!!!" +
+                    "\n\t В компании работает:" + employees.size());
+        } else {
+            System.out.println(count + " самых высоких зарплат: ");
+            for (int i = 0; i < count; i++) {
+                System.out.println("Зарплата сотрудника № " + (i + 1) + " : " + employees.get(i).getMonthSalary());
+            }
+        }
+        return employees;
+    }
+
+    //Сортировка по возрастанию зарплат сотрудников
+    List<Employee> getLowestSalaryStaff(int count) {
+
+        Collections.sort(employees, new Comparator<Employee>() {
+            public int compare(Employee o1, Employee o2) {
+                return o1.getMonthSalary() - o2.getMonthSalary();
+            }
+
+        });
+        if (count > employees.size()) {
+            System.out.println("Вы хотите вывести зарплаты сотрудников больше чем их работает в компании!!!" +
+                    "\n\t В компании работает:" + employees.size());
+        } else {
+            System.out.println(count + " самых высоких зарплат: ");
+            for (int i = 0; i < count; i++) {
+                System.out.println("Зарплата сотрудника № " + (i + 1) + " : " + employees.get(i).getMonthSalary());
+            }
         }
         return employees;
     }
 
 }
+
+

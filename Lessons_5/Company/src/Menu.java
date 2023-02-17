@@ -24,7 +24,9 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "Нанять в компанию менеджеров" +
                 ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "Нанять в компанию топ-менеджеров" +
                 ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Увольнение сотрудников." +
-                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход из приложения.");
+                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Список самых высоких зарплат." +
+                ANSI_GREEN + "\" \n\t 10. " + ANSI_RESET + "Список самых низких зарплат." +
+                ANSI_GREEN + "\" \n\t 11. " + ANSI_RESET + "Выход из приложения.");
         setCommand();
     }
 
@@ -68,12 +70,24 @@ public class Menu {
                 company.fire();
                 getMenu();
             case 9:
+                Scanner scanerCount = new Scanner(System.in);
+                System.out.println("Введите кол-во сотрудников: ");
+                int count = scanerCount.nextInt();
+                company.getTopSalaryStaff(count);
+                getMenu();
+            case 10:
+                Scanner scanerCount2 = new Scanner(System.in);
+                System.out.println("Введите кол-во сотрудников: ");
+                count = scanerCount2.nextInt();
+                company.getLowestSalaryStaff(count);
+                getMenu();
+            case 11:
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Приложение завершило работу.");
                 System.out.println("-------------------------------------------------------------------");
                 break;
             default:
-                if (command < 1 || command > 9) {
+                if (command < 1 || command > 11) {
                     System.out.println("Введена неверная команда! Введите команду повторно.");
                 }
                 getMenu();
