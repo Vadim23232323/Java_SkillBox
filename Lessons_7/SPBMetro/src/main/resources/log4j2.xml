@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+  <appenders>
+    <RollingFile name="searchLogger" fileName="logs/search.log" filePattern="logs/search-%d{yyyy-MM-dd}.log">
+      <!-- Except Warn -->
+      <Filters>
+        <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL" />
+        <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL" />
+      </Filters>
+      <PatternLayout>
+        <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+      </Policies>
+    </RollingFile>
+    <RollingFile name="errorLogger" fileName="logs/input_errors.log" filePattern="logs/input_errors-%d{yyyy-MM-dd}.log">
+      <PatternLayout>
+        <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+      </Policies>
+    </RollingFile>
+
+    <RollingFile name="exceptionsLogger" fileName="logs/exceptions.log" filePattern="logs/exceptions-%d{yyyy-MM-dd}.log">
+      <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL" />
+      <PatternLayout>
+        <pattern>%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n</pattern>
+      </PatternLayout>
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+      </Policies>
+    </RollingFile>
+  </appenders>
+  <Loggers>
+    <Root level="trace" >
+      <AppenderRef ref="searchLogger" level="info" />
+      <AppenderRef ref="errorLogger" level="error" />
+      <AppenderRef ref="exceptionsLogger" level="warn" />
+    </Root>
+  </Loggers>
+</configuration>
+
