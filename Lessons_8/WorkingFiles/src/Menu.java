@@ -12,9 +12,11 @@ public class Menu {
 
     // Меню
     public void getMenu() {
-        System.out.println("Меню команд: " + ANSI_GREEN + "\" \n\t 1. " + ANSI_RESET + "Задайте каталог." +
-                ANSI_GREEN + "\" \n\t 2. " + ANSI_RESET + "Дерево каталога и размер." +
-                ANSI_GREEN + "\" \n\t 3. " + ANSI_RESET + "Выход.");
+        System.out.println("Меню команд работы с фалами: " + ANSI_GREEN + "\" \n\t 1. " + ANSI_RESET + "Задайте каталог." +
+                ANSI_GREEN + "\" \n\t 2. " + ANSI_RESET + "Дерево каталога." +
+                ANSI_GREEN + "\" \n\t 3. " + ANSI_RESET + "Размер каталога." +
+                ANSI_GREEN + "\" \n\t 4. " + ANSI_RESET + "Копирование каталогов." +
+                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход.");
         setCommand();
     }
 
@@ -34,15 +36,23 @@ public class Menu {
                 folder.loadingFolder();
                 getMenu();
             case 2:
-                folder.printFolders();
+                folder.getFoldersSize(folder.folder);
                 getMenu();
             case 3:
+                folder.printSizeFolder();
+                getMenu();
+            case 4:
+                folder.copyFolder(folder.folder, folder.loadingFolderToCopy());
+                folder.resultCopy();
+                getMenu();
+            case 9:
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Приложение завершило работу.");
                 System.out.println("-------------------------------------------------------------------");
+                System.exit(0);
                 break;
             default:
-                if (command < 1 || command > 3) {
+                if (command < 1 || command > 9) {
                     System.out.println("Введена неверная команда! Введите команду повторно.");
                 }
                 getMenu();

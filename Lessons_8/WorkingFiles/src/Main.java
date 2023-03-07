@@ -1,11 +1,11 @@
-import java.io.BufferedReader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         // --------------------------------------- Клас File ----------------------------------------------
 
@@ -79,6 +79,40 @@ public class Main {
 //        System.out.println(builder.toString());
 
         // --------------------------------------- Задание № 9.1 ----------------------------------------------
+
+//        Menu menu = new Menu();
+//        menu.getMenu();
+
+
+        // --------------------------------------- Запись в файл ----------------------------------------------
+
+//        try {
+//            PrintWriter writer = new PrintWriter("src\\resources\\Data.txt", true);
+//
+//            BufferedWriter bufferWriter = new BufferedWriter(writer);
+//
+//            writer.write("Дубовский Вадим Александрович 11");
+//
+//            writer.flush();
+//
+//            writer.close();
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+
+        // --------------------------------------- До запись в файл ----------------------------------------------
+
+//        try {
+//            FileWriter writer = new FileWriter("src\\resources\\Data.txt", true);
+//            BufferedWriter bufferWriter = new BufferedWriter(writer);
+//            bufferWriter.write("\nСеменов Егор Александрович");
+//            bufferWriter.close();
+//        }
+//        catch (IOException e) {
+//            System.out.println(e);
+//        }
+
+        // --------------------------------------- Задание № 9.2 ----------------------------------------------
 
         Menu menu = new Menu();
         menu.getMenu();
