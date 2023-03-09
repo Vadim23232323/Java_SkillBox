@@ -2,6 +2,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class WorkFile {
@@ -20,6 +21,10 @@ public class WorkFile {
                 System.out.println("Выписка пуста!");
                 System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
             } else {
+
+                for (BankStatement lines: statements) {
+                    System.out.println("Название компании: " + lines.getOperationDescription() + " Расход: " + lines.getConsumption());
+                }
                 System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
                 System.out.print("Сумма доходов: ");
                 statements.stream().map(b->b.getComing()).reduce((s1,s2) -> s1 + s2).ifPresent(System.out::println);
@@ -44,6 +49,7 @@ public class WorkFile {
                     System.out.println(line);
                     continue;
                 }
+                System.out.println(line);
                 statements.add(new BankStatement(
                         fragments[0],
                         fragments[1],
@@ -54,6 +60,7 @@ public class WorkFile {
                         Integer.parseInt(fragments[6]),
                         Integer.parseInt(fragments[7])
                 ));
+
 
             }
 
