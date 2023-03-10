@@ -1,19 +1,28 @@
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
+// --------------------------------------- Задание № 9.3, 9.4  ----------------------------------------------
 public class WorkFile {
 
 
-    private static final String pathFile = "src/resources/movementList.csv";
-
+    private static final String pathCsvFile = "src/resources/movementList.csv";
+    private static final String pathHtmlFile = "src/resources/code.html";
     private static String dateFormat = "dd.MM.yyyy";
-    ArrayList<BankStatement> statements = new ArrayList<>();
+    private ArrayList<BankStatement> statements = new ArrayList<>();
+
+    private StringBuilder builder = new StringBuilder();
 
 
+    // Выводит сводную информацию по выписке
     public void getPrintBankStatement () {
         try {
             if (statements.size() == 0) {
@@ -23,7 +32,7 @@ public class WorkFile {
             } else {
 
                 for (BankStatement lines: statements) {
-                    System.out.println("Название компании: " + lines.getOperationDescription() + " Расход: " + lines.getConsumption());
+                    System.out.println("Название компании: " + lines.getOperationDescription() + "        | Расход: " + lines.getConsumption());
                 }
                 System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
                 System.out.print("Сумма доходов: ");
@@ -37,19 +46,20 @@ public class WorkFile {
         }
     }
 
-    public  ArrayList<BankStatement> loadStaffFromFile()
+
+    // Загружаем CSV выписку
+    public  ArrayList<BankStatement> loadCsvFile()
     {
         try
         {
-            List<String> lines = Files.readAllLines(Paths.get(pathFile));
+            List<String> lines = Files.readAllLines(Paths.get(pathCsvFile));
             for(String line : lines)
             {
                 String[] fragments = line.split(",");
                 if(fragments.length != 8) {
-                    System.out.println(line);
+                    System.out.println("Не удается прочитать строку выписки: " + line);
                     continue;
                 }
-                System.out.println(line);
                 statements.add(new BankStatement(
                         fragments[0],
                         fragments[1],
@@ -65,7 +75,7 @@ public class WorkFile {
             }
 
             System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
-            System.out.println("Выписка " + pathFile + " загружена!!!");
+            System.out.println("Выписка " + pathCsvFile + " загружена!!!");
             System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
         }
         catch (Exception ex) {
@@ -73,4 +83,41 @@ public class WorkFile {
         }
         return statements;
     }
+
+
+    // Загружаем и печатаем HTML файл
+    public String loadHtmlFile(){
+        try {
+          List<String> lines =  Files.readAllLines(Paths.get(pathHtmlFile));
+          lines.forEach(line ->builder.append(line + "\n"));
+          lines.forEach(System.out::println);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return builder.toString();
+    }
+
+    // Парсим HTML файл с помощью библиотеки Jsoup и делаем выборку в файле
+    public void parseHtml () {
+        Document doc = Jsoup.parse(loadHtmlFile());
+        Elements elements =  doc.select("li.start-screen-directions__item");
+        System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
+//        elements.forEach(System.out::println);
+        elements.forEach(element -> {
+            System.out.println(element.text());
+        });
+        System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
+    }
+
+    public void parseHtmlOnliner () throws IOException {
+        Document doc = Jsoup.connect("https://www.onliner.by//")
+                .userAgent("Chrome/110.0.5481.180")
+                .referrer("http://www.google.com")
+                .get();
+
+        Elements elements =  doc.select("a");
+        elements.forEach(System.out::println);
+    }
+
+
 }

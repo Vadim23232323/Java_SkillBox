@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
@@ -18,8 +19,10 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 2. " + ANSI_RESET + "Дерево каталога." +
                 ANSI_GREEN + "\" \n\t 3. " + ANSI_RESET + "Размер каталога." +
                 ANSI_GREEN + "\" \n\t 4. " + ANSI_RESET + "Копирование каталогов." +
-                ANSI_GREEN + "\" \n\t 5. " + ANSI_RESET + "Прочитать банковскую выписку." +
+                ANSI_GREEN + "\" \n\t 5. " + ANSI_RESET + "Прочитать банковскую выписку CSV." +
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "Сводная информация по банковской выписке." +
+                ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "Прочитать HTML файл." +
+                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Прочитать код страницы onliner.by." +
                 ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход.");
         setCommand();
     }
@@ -50,10 +53,20 @@ public class Menu {
                 folder.resultCopy();
                 getMenu();
             case 5:
-                file.loadStaffFromFile();
+                file.loadCsvFile();
                 getMenu();
             case 6:
                 file.getPrintBankStatement();
+                getMenu();
+            case 7:
+                file.parseHtml();
+                getMenu();
+            case 8:
+                try {
+                    file.parseHtmlOnliner();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
                 getMenu();
             case 9:
                 System.out.println("-------------------------------------------------------------------");
