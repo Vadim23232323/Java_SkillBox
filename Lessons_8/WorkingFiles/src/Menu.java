@@ -15,14 +15,14 @@ public class Menu {
 
     // Меню
     public void getMenu() {
-        System.out.println("Меню команд работы с фалами: " + ANSI_GREEN + "\" \n\t 1. " + ANSI_RESET + "Задайте каталог." +
+        System.out.println("Меню команд работы с файлами: " + ANSI_GREEN + "\" \n\t 1. " + ANSI_RESET + "Задайте каталог." +
                 ANSI_GREEN + "\" \n\t 2. " + ANSI_RESET + "Дерево каталога." +
                 ANSI_GREEN + "\" \n\t 3. " + ANSI_RESET + "Размер каталога." +
                 ANSI_GREEN + "\" \n\t 4. " + ANSI_RESET + "Копирование каталогов." +
                 ANSI_GREEN + "\" \n\t 5. " + ANSI_RESET + "Прочитать банковскую выписку CSV." +
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "Сводная информация по банковской выписке." +
                 ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "Прочитать HTML файл." +
-                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Прочитать код страницы onliner.by." +
+                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Прочитать код страницы lenta.ru." +
                 ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход.");
         setCommand();
     }

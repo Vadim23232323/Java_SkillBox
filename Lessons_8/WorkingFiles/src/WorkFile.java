@@ -1,9 +1,12 @@
+import org.apache.commons.io.FilenameUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
@@ -110,13 +113,47 @@ public class WorkFile {
     }
 
     public void parseHtmlOnliner () throws IOException {
-        Document doc = Jsoup.connect("https://www.onliner.by//")
+        Document doc = Jsoup.connect("https://lenta.ru//")
                 .userAgent("Chrome/110.0.5481.180")
                 .referrer("http://www.google.com")
                 .get();
 
-        Elements elements =  doc.select("a");
-        elements.forEach(System.out::println);
+        Elements elements =  doc.select("img");
+
+        for (Element element: elements) {
+            Element link = element;
+            String absSrc = link.attr("abs:src"); // "http://jsoup.org/"
+
+            try {
+                if (absSrc.length() > 0) {
+                    System.out.println(absSrc);
+                    downloadImage(absSrc, "image/");
+                }
+            } catch (Exception ex) {
+                System.out.println("Произошла ошибка при чтении URL, картинка не будет загружена!");
+            }
+
+
+        }
+    }
+
+    public static void downloadImage(String sourceUrl, String targetDirectory)
+            throws MalformedURLException, IOException, FileNotFoundException
+    {
+        URL imageUrl = new URL(sourceUrl);
+        try (InputStream imageReader = new BufferedInputStream(
+                imageUrl.openStream());
+             OutputStream imageWriter = new BufferedOutputStream(
+                     new FileOutputStream(targetDirectory + File.separator
+                             + FilenameUtils.getName(sourceUrl)));)
+        {
+            int readByte;
+
+            while ((readByte = imageReader.read()) != -1)
+            {
+                imageWriter.write(readByte);
+            }
+        }
     }
 
 
