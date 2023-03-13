@@ -22,7 +22,7 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 5. " + ANSI_RESET + "Прочитать банковскую выписку CSV." +
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "Сводная информация по банковской выписке." +
                 ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "Прочитать HTML файл." +
-                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Прочитать код страницы lenta.ru." +
+                ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Прочитать код страницы сайта." +
                 ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход.");
         setCommand();
     }
@@ -59,11 +59,11 @@ public class Menu {
                 file.getPrintBankStatement();
                 getMenu();
             case 7:
-                file.parseHtml();
+                file.parseHtmlFile();
                 getMenu();
             case 8:
                 try {
-                    file.parseHtmlOnliner();
+                    file.parseHtmlSite();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }

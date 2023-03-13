@@ -101,7 +101,7 @@ public class WorkFile {
     }
 
     // Парсим HTML файл с помощью библиотеки Jsoup и делаем выборку в файле
-    public void parseHtml () {
+    public void parseHtmlFile () {
         Document doc = Jsoup.parse(loadHtmlFile());
         Elements elements =  doc.select("li.start-screen-directions__item");
         System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
@@ -112,8 +112,9 @@ public class WorkFile {
         System.out.println(Menu.ANSI_GREEN + "--------------------------------------------------------" + Menu.ANSI_RESET);
     }
 
-    public void parseHtmlOnliner () throws IOException {
-        Document doc = Jsoup.connect("https://lenta.ru//")
+    // Парсим HTML код страницы с помощью библиотеки Jsoup и делаем выборку в файле
+    public void parseHtmlSite () throws IOException {
+        Document doc = Jsoup.connect("https://money.onliner.by/2023/03/13/")
                 .userAgent("Chrome/110.0.5481.180")
                 .referrer("http://www.google.com")
                 .get();
@@ -122,7 +123,7 @@ public class WorkFile {
 
         for (Element element: elements) {
             Element link = element;
-            String absSrc = link.attr("abs:src"); // "http://jsoup.org/"
+            String absSrc = link.attr("abs:src");
 
             try {
                 if (absSrc.length() > 0) {
@@ -137,6 +138,8 @@ public class WorkFile {
         }
     }
 
+
+    // Скачиваем все изображение из HTML страницы
     public static void downloadImage(String sourceUrl, String targetDirectory)
             throws MalformedURLException, IOException, FileNotFoundException
     {
