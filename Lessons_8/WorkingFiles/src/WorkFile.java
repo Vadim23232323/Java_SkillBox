@@ -127,13 +127,13 @@ public class WorkFile {
 
             try {
                 if (absSrc.length() > 0) {
+                    System.out.println("-------------------------");
                     System.out.println(absSrc);
                     downloadImage(absSrc, "image/");
                 }
             } catch (Exception ex) {
                 System.out.println("Произошла ошибка при чтении URL, картинка не будет загружена!");
             }
-
 
         }
     }

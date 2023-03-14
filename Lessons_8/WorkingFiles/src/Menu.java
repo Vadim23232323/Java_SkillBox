@@ -11,6 +11,8 @@ public class Menu {
 
     WorkFile file = new WorkFile();
 
+    WorkFileJson json = new WorkFileJson();
+
     int command;
 
     // Меню
@@ -23,7 +25,8 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "Сводная информация по банковской выписке." +
                 ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "Прочитать HTML файл." +
                 ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Прочитать код страницы сайта." +
-                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Выход.");
+                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Json." +
+                ANSI_GREEN + "\" \n\t 10. " + ANSI_RESET + "Выход.");
         setCommand();
     }
 
@@ -69,13 +72,20 @@ public class Menu {
                 }
                 getMenu();
             case 9:
+                try {
+                    json.parseHtmlSite();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                getMenu();
+            case 10:
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Приложение завершило работу.");
                 System.out.println("-------------------------------------------------------------------");
                 System.exit(0);
                 break;
             default:
-                if (command < 1 || command > 9) {
+                if (command < 1 || command > 10) {
                     System.out.println("Введена неверная команда! Введите команду повторно.");
                 }
                 getMenu();
