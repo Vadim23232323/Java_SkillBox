@@ -4,18 +4,15 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.List;
 
 public class WorkFileJson {
     private ArrayList<JsonStation> stations = new ArrayList<>();
 
     public void getPrintStation () {
         for (JsonStation station: stations) {
-            System.out.println("Номер: " + station.getNumberStation());
+            System.out.println("Номер станции: " + station.getNumberStation() + " Название станции: " + station.getNameStation());
+            System.out.println("-----------------------------------------------------");
         }
     }
 
@@ -28,15 +25,14 @@ public class WorkFileJson {
                 .referrer("http://www.google.com")
                 .get();
 
-        Elements elements =  doc.select("span.num, span.name");
+        Elements elements =  doc.select("p.single-station");
 
         for (Element element: elements) {
-            String nameStation = element.select("span.name").text();
             String numStation = element.select("span.num").text();
-            // stations.add(new JsonStation(numStation,nameStation));
+            String nameStation = element.select("span.name").text();
+            stations.add(new JsonStation(numStation,nameStation));
             try {
-           // System.out.println(numStation + " " + nameStation);
-                System.out.println(element.text());
+                 System.out.println(numStation + nameStation);
 
             } catch (Exception ex) {
                 System.out.println("Произошла ошибка при чтении URL, картинка не будет загружена!");

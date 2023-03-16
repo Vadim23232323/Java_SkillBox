@@ -74,6 +74,7 @@ public class Menu {
             case 9:
                 try {
                     json.parseHtmlSite();
+                    json.getPrintStation();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
