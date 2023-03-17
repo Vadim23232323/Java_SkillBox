@@ -25,8 +25,10 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 6. " + ANSI_RESET + "Сводная информация по банковской выписке." +
                 ANSI_GREEN + "\" \n\t 7. " + ANSI_RESET + "Прочитать HTML файл." +
                 ANSI_GREEN + "\" \n\t 8. " + ANSI_RESET + "Прочитать код страницы сайта." +
-                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Json." +
-                ANSI_GREEN + "\" \n\t 10. " + ANSI_RESET + "Выход.");
+                ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Прочитать код страницы сайта карты метро г.Москва." +
+                ANSI_GREEN + "\" \n\t 10. " + ANSI_RESET + "Создать json файл карты метро" +
+                ANSI_GREEN + "\" \n\t 11. " + ANSI_RESET + "Прочитать json файл карты метро" +
+                ANSI_GREEN + "\" \n\t 12. " + ANSI_RESET + "Выход.");
         setCommand();
     }
 
@@ -74,19 +76,33 @@ public class Menu {
             case 9:
                 try {
                     json.parseHtmlSite();
-                    json.getPrintStation();
+                //    json.getPrintMetro();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
                 getMenu();
             case 10:
+                try {
+                    json.createJsonFile();
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                getMenu();
+            case 11:
+                try {
+                    json.JsonParser();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+                getMenu();
+            case 12:
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Приложение завершило работу.");
                 System.out.println("-------------------------------------------------------------------");
                 System.exit(0);
                 break;
             default:
-                if (command < 1 || command > 10) {
+                if (command < 1 || command > 12) {
                     System.out.println("Введена неверная команда! Введите команду повторно.");
                 }
                 getMenu();
