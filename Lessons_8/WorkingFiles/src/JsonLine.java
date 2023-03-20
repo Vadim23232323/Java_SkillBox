@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class JsonLine
 {
     private String nameLine;
@@ -24,7 +26,19 @@ public class JsonLine
         this.numberLine = numberStation;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        JsonLine line = (JsonLine) o;
+        return Objects.equals(numberLine, line.numberLine) &&
+                Objects.equals(nameLine, line.nameLine);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberLine, nameLine);
+    }
 
 
 

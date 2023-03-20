@@ -1,1394 +1,176 @@
 {
-  "lines": [
-    {
-      "nameLine": "Сокольническая линия",
-      "numberLine": "1"
-    },
-    {
-      "nameLine": "Замоскворецкая линия",
-      "numberLine": "2"
-    },
-    {
-      "nameLine": "Арбатско-Покровская линия",
-      "numberLine": "3"
-    },
-    {
-      "nameLine": "Филевская линия",
-      "numberLine": "4"
-    },
-    {
-      "nameLine": "Кольцевая линия",
-      "numberLine": "5"
-    },
-    {
-      "nameLine": "Калужско-Рижская линия",
-      "numberLine": "6"
-    },
-    {
-      "nameLine": "Таганско-Краснопресненская линия",
-      "numberLine": "7"
-    },
-    {
-      "nameLine": "Калининско-Солнцевская линия",
-      "numberLine": "8"
-    },
-    {
-      "nameLine": "Серпуховско-Тимирязевская линия",
-      "numberLine": "9"
-    },
-    {
-      "nameLine": "Люблинско-Дмитровская линия",
-      "numberLine": "10"
-    },
-    {
-      "nameLine": "Большая Кольцевая Линия",
-      "numberLine": "11"
-    },
-    {
-      "nameLine": "Каховская линия",
-      "numberLine": "11A"
-    },
-    {
-      "nameLine": "Бутовская линия",
-      "numberLine": "12"
-    },
-    {
-      "nameLine": "Центральное Кольцо",
-      "numberLine": "14"
-    },
-    {
-      "nameLine": "Некрасовская линия",
-      "numberLine": "15"
-    },
-    {
-      "nameLine": "МЦД-1",
-      "numberLine": "D1"
-    },
-    {
-      "nameLine": "МЦД-2",
-      "numberLine": "D2"
-    }
-  ],
-  "stations": [
-    {
-      "nameStation": "Бульвар Рокоссовского",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Черкизовская",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Преображенская площадь",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Сокольники",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Красносельская",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Комсомольская",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Красные ворота",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Чистые пруды",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Лубянка",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Охотный ряд",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Библиотека имени Ленина",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Кропоткинская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Парк Культуры",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Фрунзенская",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Спортивная",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Воробьевы горы",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Университет",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Проспект Вернадского",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Юго-Западная",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Тропарёво",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Румянцево",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Саларьево",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Филатов Луг",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Прокшино",
-      "numberStation": "24."
-    },
-    {
-      "nameStation": "Ольховая",
-      "numberStation": "25."
-    },
-    {
-      "nameStation": "Коммунарка",
-      "numberStation": "26."
-    },
-    {
-      "nameStation": "Ховрино",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Беломорская",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Речной вокзал",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Водный стадион",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Войковская",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Сокол",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Аэропорт",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Динамо",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Белорусская",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Маяковская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Тверская",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Театральная",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Новокузнецкая",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Павелецкая",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Автозаводская",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Технопарк",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Коломенская",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Каширская",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Кантемировская",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Царицыно",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Орехово",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Домодедовская",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Красногвардейская",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Алма-Атинская",
-      "numberStation": "24."
-    },
-    {
-      "nameStation": "Пятницкое шоссе",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Митино",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Волоколамская",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Мякинино",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Строгино",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Крылатское",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Молодежная",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Кунцевская",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Славянский бульвар",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Парк Победы",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Киевская",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Смоленская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Арбатская",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Площадь Революции",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Курская",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Бауманская",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Электрозаводская",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Семеновская",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Партизанская",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Измайловская",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Первомайская",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Щелковская",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Александровский сад",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Арбатская",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Смоленская",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Киевская",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Студенческая",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Кутузовская",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Фили",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Багратионовская",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Филевский парк",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Пионерская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Кунцевская",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Выставочная",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Международная",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Киевская",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Парк Культуры",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Октябрьская",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Добрынинская",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Павелецкая",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Таганская",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Курская",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Комсомольская",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Проспект Мира",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Новослободская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Белорусская",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Краснопресненская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Новоясеневская",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Ясенево",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Теплый стан",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Коньково",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Беляево",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Калужская",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Новые Черёмушки",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Профсоюзная",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Академическая",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Ленинский проспект",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Шаболовская",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Октябрьская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Третьяковская",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Китай-город",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Тургеневская",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Сухаревская",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Проспект Мира",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Рижская",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Алексеевская",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "ВДНХ",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Ботанический сад",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Свиблово",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Бабушкинская",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Медведково",
-      "numberStation": "24."
-    },
-    {
-      "nameStation": "Котельники",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Жулебино",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Лермонтовский проспект",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Выхино",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Рязанский проспект",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Кузьминки",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Текстильщики",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Волгоградский проспект",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Пролетарская",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Таганская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Китай-город",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Кузнецкий мост",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Пушкинская",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Баррикадная",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Улица 1905 года",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Беговая",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Полежаевская",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Октябрьское Поле",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Щукинская",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Спартак",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Тушинская",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Сходненская",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Планерная",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Новокосино",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Новогиреево",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Перово",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Шоссе Энтузиастов",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Авиамоторная",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Площадь Ильича",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Марксистская",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Третьяковская",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Деловой центр",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Парк Победы",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Минская",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Ломоносовский проспект",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Раменки",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Мичуринский проспект",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Озёрная",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Говорово",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Солнцево",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Боровское шоссе",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Новопеределкино",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Рассказовка",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Бульвар Дмитрия Донского",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Аннино",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Улица академика Янгеля",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Пражская",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Южная",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Чертановская",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Севастопольская",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Нахимовский Проспект",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Нагорная",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Нагатинская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Тульская",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Серпуховская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Полянка",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Боровицкая",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Чеховская",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Цветной бульвар",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Менделеевская",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Савеловская",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Дмитровская",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Тимирязевская",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Петровско-Разумовская",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Владыкино",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Отрадное",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Бибирево",
-      "numberStation": "24."
-    },
-    {
-      "nameStation": "Алтуфьево",
-      "numberStation": "25."
-    },
-    {
-      "nameStation": "Зябликово",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Шипиловская",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Борисово",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Марьино",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Братиславская",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Люблино",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Волжская",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Печатники",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Кожуховская",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Дубровка",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Крестьянская застава",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Римская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Чкаловская",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Сретенский бульвар",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Трубная",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Достоевская",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Марьина роща",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Бутырская",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Фонвизинская",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Петровско-Разумовская",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Окружная",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Верхние Лихоборы",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Селигерская",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Савёловская",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Петровский парк",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "ЦСКА",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Хорошёвская",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Шелепиха",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Деловой центр",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Каховская",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Варшавская",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Каширская",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Битцевский парк",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Лесопарковая",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Улица Старокачаловская",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Улица Скобелевская",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Бульвар адмирала Ушакова",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Улица Горчакова",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Бунинская Аллея",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Окружная",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Владыкино",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Ботанический Сад",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Ростокино",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Белокаменная",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Бульвар Рокоссовского",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Локомотив",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Измайлово",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Соколиная Гора",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Шоссе Энтузиастов",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Андроновка",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Нижегородская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Новохохловская",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Угрешская",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Дубровка",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Автозаводская",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "ЗИЛ",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Верхние Котлы",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Крымская",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Площадь Гагарина",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Лужники",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Кутузовская",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Деловой центр",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Шелепиха",
-      "numberStation": "24."
-    },
-    {
-      "nameStation": "Хорошёво",
-      "numberStation": "25."
-    },
-    {
-      "nameStation": "Зорге",
-      "numberStation": "26."
-    },
-    {
-      "nameStation": "Панфиловская",
-      "numberStation": "27."
-    },
-    {
-      "nameStation": "Стрешнево",
-      "numberStation": "28."
-    },
-    {
-      "nameStation": "Балтийская",
-      "numberStation": "29."
-    },
-    {
-      "nameStation": "Коптево",
-      "numberStation": "30."
-    },
-    {
-      "nameStation": "Лихоборы",
-      "numberStation": "31."
-    },
-    {
-      "nameStation": "Электрозаводская",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Лефортово",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Авиамоторная",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Нижегородская",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Стахановская",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Окская",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Юго-Восточная",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Косино",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Улица Дмитриевского",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Лухмановская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Некрасовка",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Одинцово",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Баковка",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Сколково",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Немчиновка",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Сетунь",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Рабочий Посёлок",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Кунцево",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Славянский бульвар",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Фили",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Тестовская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Беговая",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Белорусская",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Савёловская",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Тимирязевская",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Окружная",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Дегунино",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Бескудниково",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Лианозово",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Марк",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Новодачная",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Долгопрудная",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Водники",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Хлебниково",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Шереметьевская",
-      "numberStation": "24."
-    },
-    {
-      "nameStation": "Лобня",
-      "numberStation": "25."
-    },
-    {
-      "nameStation": "Нахабино",
-      "numberStation": "1."
-    },
-    {
-      "nameStation": "Аникеевка",
-      "numberStation": "2."
-    },
-    {
-      "nameStation": "Опалиха",
-      "numberStation": "3."
-    },
-    {
-      "nameStation": "Красногорская",
-      "numberStation": "4."
-    },
-    {
-      "nameStation": "Павшино",
-      "numberStation": "5."
-    },
-    {
-      "nameStation": "Пенягино",
-      "numberStation": "6."
-    },
-    {
-      "nameStation": "Волоколамская",
-      "numberStation": "7."
-    },
-    {
-      "nameStation": "Трикотажная",
-      "numberStation": "8."
-    },
-    {
-      "nameStation": "Тушино",
-      "numberStation": "9."
-    },
-    {
-      "nameStation": "Щукинская",
-      "numberStation": "10."
-    },
-    {
-      "nameStation": "Стрешнево",
-      "numberStation": "11."
-    },
-    {
-      "nameStation": "Красный Балтиец",
-      "numberStation": "12."
-    },
-    {
-      "nameStation": "Гражданская",
-      "numberStation": "13."
-    },
-    {
-      "nameStation": "Дмитровская",
-      "numberStation": "14."
-    },
-    {
-      "nameStation": "Рижская",
-      "numberStation": "15."
-    },
-    {
-      "nameStation": "Каланчёвская",
-      "numberStation": "16."
-    },
-    {
-      "nameStation": "Курская",
-      "numberStation": "17."
-    },
-    {
-      "nameStation": "Москва Товарная",
-      "numberStation": "18."
-    },
-    {
-      "nameStation": "Калитники",
-      "numberStation": "19."
-    },
-    {
-      "nameStation": "Новохохловская",
-      "numberStation": "20."
-    },
-    {
-      "nameStation": "Текстильщики",
-      "numberStation": "21."
-    },
-    {
-      "nameStation": "Кубанская",
-      "numberStation": "22."
-    },
-    {
-      "nameStation": "Депо",
-      "numberStation": "23."
-    },
-    {
-      "nameStation": "Перерва",
-      "numberStation": "24."
-    },
-    {
-      "nameStation": "Курьяново",
-      "numberStation": "25."
-    },
-    {
-      "nameStation": "Москворечье",
-      "numberStation": "26."
-    },
-    {
-      "nameStation": "Царицыно",
-      "numberStation": "27."
-    },
-    {
-      "nameStation": "Покровская",
-      "numberStation": "28."
-    },
-    {
-      "nameStation": "Красный Строитель",
-      "numberStation": "29."
-    },
-    {
-      "nameStation": "Битца",
-      "numberStation": "30."
-    },
-    {
-      "nameStation": "Бутово",
-      "numberStation": "31."
-    },
-    {
-      "nameStation": "Щербинка",
-      "numberStation": "32."
-    },
-    {
-      "nameStation": "Остафьево",
-      "numberStation": "33."
-    },
-    {
-      "nameStation": "Силикатная",
-      "numberStation": "34."
-    },
-    {
-      "nameStation": "Подольск",
-      "numberStation": "35."
-    }
-  ]
+    "stations" : {
+        "1" : [
+            "Р”РµРІСЏС‚РєРёРЅРѕ",
+            "Р“СЂР°Р¶РґР°РЅСЃРєРёР№ РїСЂРѕСЃРїРµРєС‚",
+            "РђРєР°РґРµРјРёС‡РµСЃРєР°СЏ",
+            "РџРѕР»РёС‚РµС…РЅРёС‡РµСЃРєР°СЏ",
+            "РџР»РѕС‰Р°РґСЊ РњСѓР¶РµСЃС‚РІР°",
+            "Р›РµСЃРЅР°СЏ",
+            "Р’С‹Р±РѕСЂРіСЃРєР°СЏ",
+            "РџР»РѕС‰Р°РґСЊ Р›РµРЅРёРЅР°",
+            "Р§РµСЂРЅС‹С€РµРІСЃРєР°СЏ",
+            "РџР»РѕС‰Р°РґСЊ Р’РѕСЃСЃС‚Р°РЅРёСЏ",
+            "Р’Р»Р°РґРёРјРёСЂСЃРєР°СЏ",
+            "РџСѓС€РєРёРЅСЃРєР°СЏ",
+            "РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёР№ РёРЅСЃС‚РёС‚СѓС‚",
+            "Р‘Р°Р»С‚РёР№СЃРєР°СЏ",
+            "РќР°СЂРІСЃРєР°СЏ",
+            "РљРёСЂРѕРІСЃРєРёР№ Р·Р°РІРѕРґ",
+            "РђРІС‚РѕРІРѕ",
+            "Р›РµРЅРёРЅСЃРєРёР№ РїСЂРѕСЃРїРµРєС‚",
+            "РџСЂРѕСЃРїРµРєС‚ Р’РµС‚РµСЂР°РЅРѕРІ"
+        ],
+        "2" : [
+            "РџР°СЂРЅР°СЃ",
+            "РџСЂРѕСЃРїРµРєС‚ РџСЂРѕСЃРІРµС‰РµРЅРёСЏ",
+            "РћР·РµСЂРєРё",
+            "РЈРґРµР»СЊРЅР°СЏ",
+            "РџРёРѕРЅРµСЂСЃРєР°СЏ",
+            "Р§С‘СЂРЅР°СЏ СЂРµС‡РєР°",
+            "РџРµС‚СЂРѕРіСЂР°РґСЃРєР°СЏ",
+            "Р“РѕСЂСЊРєРѕРІСЃРєР°СЏ",
+            "РќРµРІСЃРєРёР№ РїСЂРѕСЃРїРµРєС‚",
+            "РЎРµРЅРЅР°СЏ РїР»РѕС‰Р°РґСЊ",
+            "РўРµС…РЅРѕР»РѕРіРёС‡РµСЃРєРёР№ РёРЅСЃС‚РёС‚СѓС‚",
+            "Р¤СЂСѓРЅР·РµРЅСЃРєР°СЏ",
+            "РњРѕСЃРєРѕРІСЃРєРёРµ РІРѕСЂРѕС‚Р°",
+            "Р­Р»РµРєС‚СЂРѕСЃРёР»Р°",
+            "РџР°СЂРє РџРѕР±РµРґС‹",
+            "РњРѕСЃРєРѕРІСЃРєР°СЏ",
+            "Р—РІС‘Р·РґРЅР°СЏ",
+            "РљСѓРїС‡РёРЅРѕ"
+        ],
+        "3" : [
+            "Р‘РµРіРѕРІР°СЏ",
+            "РќРѕРІРѕРєСЂРµСЃС‚РѕРІСЃРєР°СЏ",
+            "РџСЂРёРјРѕСЂСЃРєР°СЏ",
+            "Р’Р°СЃРёР»РµРѕСЃС‚СЂРѕРІСЃРєР°СЏ",
+            "Р“РѕСЃС‚РёРЅС‹Р№ РґРІРѕСЂ",
+            "РњР°СЏРєРѕРІСЃРєР°СЏ",
+            "РџР»РѕС‰Р°РґСЊ РђР»РµРєСЃР°РЅРґСЂР° РќРµРІСЃРєРѕРіРѕ",
+            "Р•Р»РёР·Р°СЂРѕРІСЃРєР°СЏ",
+            "Р›РѕРјРѕРЅРѕСЃРѕРІСЃРєР°СЏ",
+            "РџСЂРѕР»РµС‚Р°СЂСЃРєР°СЏ",
+            "РћР±СѓС…РѕРІРѕ",
+            "Р С‹Р±Р°С†РєРѕРµ"
+        ],
+        "4" : [
+            "РЎРїР°СЃСЃРєР°СЏ",
+            "Р”РѕСЃС‚РѕРµРІСЃРєР°СЏ",
+            "Р›РёРіРѕРІСЃРєРёР№ РїСЂРѕСЃРїРµРєС‚",
+            "РџР»РѕС‰Р°РґСЊ РђР»РµРєСЃР°РЅРґСЂР° РќРµРІСЃРєРѕРіРѕ",
+            "РќРѕРІРѕС‡РµСЂРєР°СЃСЃРєР°СЏ",
+            "Р›Р°РґРѕР¶СЃРєР°СЏ",
+            "РџСЂРѕСЃРїРµРєС‚ Р‘РѕР»СЊС€РµРІРёРєРѕРІ",
+            "РЈР»РёС†Р° Р”С‹Р±РµРЅРєРѕ"
+        ],
+        "5" : [
+            "РљРѕРјРµРЅРґР°РЅС‚СЃРєРёР№ РїСЂРѕСЃРїРµРєС‚",
+            "РЎС‚Р°СЂР°СЏ Р”РµСЂРµРІРЅСЏ",
+            "РљСЂРµСЃС‚РѕРІСЃРєРёР№ РѕСЃС‚СЂРѕРІ",
+            "Р§РєР°Р»РѕРІСЃРєР°СЏ",
+            "РЎРїРѕСЂС‚РёРІРЅР°СЏ",
+            "РђРґРјРёСЂР°Р»С‚РµР№СЃРєР°СЏ",
+            "РЎР°РґРѕРІР°СЏ",
+            "Р—РІРµРЅРёРіРѕСЂРѕРґСЃРєР°СЏ",
+            "РћР±РІРѕРґРЅС‹Р№ РєР°РЅР°Р»",
+            "Р’РѕР»РєРѕРІСЃРєР°СЏ",
+            "Р‘СѓС…Р°СЂРµСЃС‚СЃРєР°СЏ",
+            "РњРµР¶РґСѓРЅР°СЂРѕРґРЅР°СЏ"
+        ]
+    },
+    "connections": [
+        [
+            {
+                "line": 2,
+                "station": "РќРµРІСЃРєРёР№ РїСЂРѕСЃРїРµРєС‚"
+            },
+            {
+                "line": 3,
+                "station": "Р“РѕСЃС‚РёРЅС‹Р№ РґРІРѕСЂ"
+            }
+        ],
+        [
+            {
+                "line": 1,
+                "station": "РџР»РѕС‰Р°РґСЊ Р’РѕСЃСЃС‚Р°РЅРёСЏ"
+            },
+            {
+                "line": 3,
+                "station": "РњР°СЏРєРѕРІСЃРєР°СЏ"
+            }
+        ],
+        [
+            {
+                "line": 2,
+                "station": "РЎРµРЅРЅР°СЏ РџР»РѕС‰Р°РґСЊ"
+            },
+            {
+                "line": 4,
+                "station": "РЎРїР°СЃСЃРєР°СЏ"
+            },
+            {
+                "line": 5,
+                "station": "РЎР°РґРѕРІР°СЏ"
+            }
+        ],
+        [
+            {
+                "line": 1,
+                "station": "Р’Р»Р°РґРёРјРёСЂСЃРєР°СЏ"
+            },
+            {
+                "line": 4,
+                "station": "Р”РѕСЃС‚РѕРµРІСЃРєР°СЏ"
+            }
+        ],
+        [
+            {
+                "line": 1,
+                "station": "РџСѓС€РєРёРЅСЃРєР°СЏ"
+            },
+            {
+                "line": 5,
+                "station": "Р—РІРµРЅРёРіРѕСЂРѕРґСЃРєР°СЏ"
+            }
+        ],
+        [
+            {
+                "line": 3,
+                "station": "РџР»РѕС‰Р°РґСЊ РђР»РµРєСЃР°РЅРґСЂР° РќРµРІСЃРєРѕРіРѕ"
+            },
+            {
+                "line": 4,
+                "station": "РџР»РѕС‰Р°РґСЊ РђР»РµРєСЃР°РЅРґСЂР° РќРµРІСЃРєРѕРіРѕ"
+            }
+        ]
+    ],
+    "lines" : [
+        {
+            "number" : 1,
+            "name" : "РљРёСЂРѕРІСЃРєРѕ-Р’С‹Р±РѕСЂРіСЃРєР°СЏ",
+            "color" : "red"
+        },
+        {
+            "number" : 2,
+            "name" : "РњРѕСЃРєРѕРІСЃРєРѕ-РџРµС‚СЂРѕРіСЂР°РґСЃРєР°СЏ",
+            "color" : "blue"
+        },
+        {
+            "number" : 3,
+            "name" : "РќРµРІСЃРєРѕ-Р’Р°СЃРёР»РµРѕСЃС‚СЂРѕРІСЃРєР°СЏ",
+            "color" : "green"
+        },
+        {
+            "number" : 4,
+            "name" : "РџСЂР°РІРѕР±РµСЂРµР¶РЅР°СЏ",
+            "color" : "orange"
+        },
+        {
+            "number" : 5,
+            "name" : "Р¤СЂСѓРЅР·РµРЅСЃРєРѕ-РџСЂРёРјРѕСЂСЃРєР°СЏ",
+            "color" : "violet"
+        }
+    ]
 }

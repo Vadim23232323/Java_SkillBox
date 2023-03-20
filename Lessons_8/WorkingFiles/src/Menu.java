@@ -76,7 +76,6 @@ public class Menu {
             case 9:
                 try {
                     json.parseHtmlSite();
-                    json.getPrintMetro();
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
@@ -92,7 +91,8 @@ public class Menu {
                 try {
                     json.JsonParser();
                 } catch (Exception ex) {
-                    throw new RuntimeException(ex);
+                    // throw new RuntimeException(ex);
+                    System.out.println("Ошибка 2");
                 }
                 getMenu();
             case 12:

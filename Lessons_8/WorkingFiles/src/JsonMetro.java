@@ -1,14 +1,16 @@
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class JsonMetro {
     private ArrayList<JsonLine> lines;
-    private ArrayList<JsonStation> stations;
+    private TreeMap<String, List<String>> stations;
 
-    public JsonMetro(ArrayList<JsonLine> lines, ArrayList<JsonStation> stations) {
+    public JsonMetro(TreeMap<String, List<String>> stations, ArrayList<JsonLine> lines) {
         this.lines = lines;
         this.stations = stations;
     }
-
     public ArrayList<JsonLine> getLines() {
         return lines;
     }
@@ -17,11 +19,13 @@ public class JsonMetro {
         this.lines = lines;
     }
 
-    public ArrayList<JsonStation> getStations() {
+    public Map<String, List<String>> getStations() {
         return stations;
     }
 
-    public void setStations(ArrayList<JsonStation> stations) {
+    public void setStations(TreeMap<String, List<String>> stations) {
         this.stations = stations;
     }
+
+
 }
