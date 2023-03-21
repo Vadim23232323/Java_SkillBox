@@ -62,7 +62,7 @@ public class WorkFileJson {
         }
     }
 
-    // Парсим из HTML кода страницы линии метро
+    // Парсим (читаем) из HTML кода страницы линии метро
     public void parseLine() {
         Elements elementsOfLines = metrodata.getElementsByClass("js-metro-line");
         for (Element element : elementsOfLines) {
@@ -118,6 +118,7 @@ public class WorkFileJson {
         }
     }
 
+    // Парсим (читаем) Json файл
     public String parseFile(String path) {
         StringBuilder builder = new StringBuilder();
         try {
@@ -130,6 +131,7 @@ public class WorkFileJson {
         return builder.toString();
     }
 
+    // Печатаем Json файл
     public void JsonParser() throws ParseException {
         JSONParser parser = new JSONParser();
         JSONObject jsonData = (JSONObject) parser.parse(parseFile(pathJson));

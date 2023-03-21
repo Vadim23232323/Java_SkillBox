@@ -1,3 +1,4 @@
+import Bank.BankStatement;
 import org.apache.commons.io.FilenameUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -168,7 +169,7 @@ public class WorkFile {
         }
     }
 
-
+    // Читаем и печатаем файл конфигурации
     public void printConfigurationFile() {
         try {
             properties.load(new FileInputStream(pathConfigFile));
