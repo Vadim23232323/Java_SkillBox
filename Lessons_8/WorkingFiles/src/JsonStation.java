@@ -1,11 +1,11 @@
 public class JsonStation
 {
-    private String numberLine;
     private String nameStation;
+    private String numberLine;
 
     public JsonStation(String numberLine, String nameStation) {
-        this.numberLine = numberLine;
         this.nameStation = nameStation;
+        this.numberLine = numberLine;
     }
 
     public String getNameStation() {

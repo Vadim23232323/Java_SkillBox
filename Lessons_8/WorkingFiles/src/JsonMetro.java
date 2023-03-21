@@ -4,18 +4,13 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class JsonMetro {
-    private ArrayList<JsonLine> lines;
+
     private TreeMap<String, List<String>> stations;
+    private ArrayList<JsonLine> lines ;
+
 
     public JsonMetro(TreeMap<String, List<String>> stations, ArrayList<JsonLine> lines) {
-        this.lines = lines;
         this.stations = stations;
-    }
-    public ArrayList<JsonLine> getLines() {
-        return lines;
-    }
-
-    public void setLines(ArrayList<JsonLine> lines) {
         this.lines = lines;
     }
 
@@ -27,5 +22,12 @@ public class JsonMetro {
         this.stations = stations;
     }
 
+    public ArrayList<JsonLine> getLines() {
+        return lines;
+    }
+
+    public void setLines(ArrayList<JsonLine> lines) {
+        this.lines = lines;
+    }
 
 }

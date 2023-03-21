@@ -45,7 +45,7 @@ public class WorkFileJson {
     }
 
 
-        // Парсим из HTML кода страницы станции метро
+    // Парсим из HTML кода страницы станции метро
     public void parseStations() {
 
         Elements elementsOfStations = metrodata.getElementsByClass("js-metro-stations");
@@ -123,8 +123,8 @@ public class WorkFileJson {
         try {
             List<String> lines = Files.readAllLines(Paths.get(path));
             lines.forEach(line -> builder.append(line));
-        }
-        catch (Exception ex) {
+            System.out.println("Json файл успешно прочитан " + pathJson);
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return builder.toString();
@@ -134,20 +134,17 @@ public class WorkFileJson {
         JSONParser parser = new JSONParser();
         JSONObject jsonData = (JSONObject) parser.parse(parseFile(pathJson));
 
-        JSONArray linesArray = (JSONArray) jsonData.get("lines");
+        Map<String, List<String>> stations = (Map<String, List<String>>) jsonData.get("stations");
 
-        lines = linesArray;
-
-        System.out.println("");
-        System.out.println("--------------------- Список линий ---------------------");
-        System.out.println("");
-
-        for (JsonLine line : lines) {
-            System.out.println(line.getNumberLine() + "  " + line.getNameLine());
-        }
-        // Map<String, List<String>> stations = (Map<String, List<String>>) jsonObject.get("stations");
+        for (String line : stations.keySet()) {
+            ArrayList<String> nameStations = (ArrayList<String>) stations.get(line);
+            System.out.println("Номер линии: " + line);
+            for (String nameStation : nameStations) {
+                System.out.println("Назавание станции: " + nameStation);
+            }
 
         }
 
+    }
 
 }

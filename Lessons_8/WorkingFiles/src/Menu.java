@@ -28,7 +28,9 @@ public class Menu {
                 ANSI_GREEN + "\" \n\t 9. " + ANSI_RESET + "Прочитать код страницы сайта карты метро г.Москва." +
                 ANSI_GREEN + "\" \n\t 10. " + ANSI_RESET + "Создать json файл карты метро" +
                 ANSI_GREEN + "\" \n\t 11. " + ANSI_RESET + "Прочитать json файл карты метро" +
-                ANSI_GREEN + "\" \n\t 12. " + ANSI_RESET + "Выход.");
+                ANSI_GREEN + "\" \n\t 12. " + ANSI_RESET + "Создание файла конфигурации config.properties" +
+                ANSI_GREEN + "\" \n\t 13. " + ANSI_RESET + "Прочитать config.properties" +
+                ANSI_GREEN + "\" \n\t 14. " + ANSI_RESET + "Выход.");
         setCommand();
     }
 
@@ -91,18 +93,23 @@ public class Menu {
                 try {
                     json.JsonParser();
                 } catch (Exception ex) {
-                    // throw new RuntimeException(ex);
-                    System.out.println("Ошибка 2");
+                    ex.printStackTrace();
                 }
                 getMenu();
             case 12:
+                file.createConfigurationFile();
+                getMenu();
+            case 13:
+                file.printConfigurationFile();
+                getMenu();
+            case 14:
                 System.out.println("-------------------------------------------------------------------");
                 System.out.println("Приложение завершило работу.");
                 System.out.println("-------------------------------------------------------------------");
                 System.exit(0);
                 break;
             default:
-                if (command < 1 || command > 12) {
+                if (command < 1 || command > 14) {
                     System.out.println("Введена неверная команда! Введите команду повторно.");
                 }
                 getMenu();
