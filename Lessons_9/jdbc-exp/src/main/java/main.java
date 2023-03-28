@@ -1,3 +1,6 @@
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -5,6 +8,8 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import java.rmi.dgc.Lease;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -38,8 +43,6 @@ public class main {
 //        } catch (Exception ex) {
 //
 //        }
-
-
 
 
         // ----------------------------------------- Задание №10.1 -------------------------------------------------
@@ -80,7 +83,6 @@ public class main {
 //        System.out.println(course.getName());
 //
 //        sessionFactory.close();
-
 
 
         // ------------------------------- Hibernate - подключение и настройка -------------------------------------
@@ -129,7 +131,6 @@ public class main {
 //
 
 
-
         // ---------------------------- Hibernate - связи manyToOne и OneToMany -------------------------------------
 
 //        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
@@ -150,9 +151,31 @@ public class main {
 //        sessionFactory.close();
 
 
-
-
         // ---------------------------- Hibernate - связи ManyToMany -------------------------------------
+
+//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+//                .configure("hibernate.cfg.xml").build();
+//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
+//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
+//
+//        Session session = sessionFactory.openSession();
+//
+//        Transaction transaction = session.beginTransaction();
+//
+//        Course course = session.get(Course.class, 1);
+//
+//        System.out.println(course.getStudents().size());
+//
+//        List<Student> studentsList = course.getStudents();
+//
+//        studentsList.forEach(student -> System.out.println(student.getName()));
+//
+//        transaction.commit();
+//
+//        sessionFactory.close();
+
+
+        // ---------------------------- Hibernate query builder -------------------------------------
 
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure("hibernate.cfg.xml").build();
@@ -161,17 +184,14 @@ public class main {
 
         Session session = sessionFactory.openSession();
 
-        Transaction transaction = session.beginTransaction();
-
-        Course course = session.get(Course.class, 1);
-
-        System.out.println(course.getStudents().size());
-
-        List<Student> studentsList = course.getStudents();
-
-        studentsList.forEach(student -> System.out.println(student.getName()));
-
-        transaction.commit();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Course> query = builder.createQuery(Course.class);
+        Root<Course> root = query.from(Course.class);
+        query.select(root);
+        List<Course> coursesList = session.createQuery(query).getResultList();
+        for (Course course : coursesList) {
+            System.out.println(course.getName());
+        }
 
         sessionFactory.close();
 

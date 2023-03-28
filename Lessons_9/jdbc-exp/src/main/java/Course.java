@@ -8,7 +8,7 @@ import java.util.List;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private  int duration;
     @Enumerated(EnumType.STRING)
@@ -17,8 +17,8 @@ public class Course {
     private String description;
     @ManyToOne(cascade = CascadeType.ALL)
     private Teacher teacher;
-    @Column(name = "students_count")
-    private int studentCount;
+    @Column(name = "students_count", nullable = true)
+    private Integer studentCount;
     private int price;
     @Column(name = "price_per_hour")
     private float pricePerHour;
