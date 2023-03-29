@@ -16,6 +16,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.List;
 
+import static org.hibernate.id.PersistentIdentifierGenerator.PK;
+
 public class main {
     public static void main(String[] args) {
 
@@ -177,6 +179,65 @@ public class main {
 
         // ---------------------------- Hibernate query builder -------------------------------------
 
+//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+//                .configure("hibernate.cfg.xml").build();
+//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
+//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
+//
+//        Session session = sessionFactory.openSession();
+//
+//        CriteriaBuilder builder = session.getCriteriaBuilder();
+//        CriteriaQuery<Course> query = builder.createQuery(Course.class);
+//        Root<Course> root = query.from(Course.class);
+//        query.select(root);
+//        List<Course> coursesList = session.createQuery(query).getResultList();
+//        for (Course course : coursesList) {
+//            System.out.println(course.getName() + " - " + course.getTeacher().getName());
+//        }
+//        sessionFactory.close();
+
+        // ---------------------------- Hibernate Where и OrderBy -------------------------------------
+
+//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+//                .configure("hibernate.cfg.xml").build();
+//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
+//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
+//
+//        Session session = sessionFactory.openSession();
+//
+//        CriteriaBuilder builder = session.getCriteriaBuilder();
+//        CriteriaQuery<Course> query = builder.createQuery(Course.class);
+//        Root<Course> root = query.from(Course.class);
+//        query.select(root).where(builder.greaterThan(root.get("price"), 100000))
+//                .orderBy(builder.asc(root.get("price")));
+//        List<Course> coursesList = session.createQuery(query).setMaxResults(5).getResultList();
+//
+//        for (Course course : coursesList) {
+//            System.out.println(course.getName() + " - " + course.getTeacher().getName() + "стоимость курса: " + course.getPrice() + "");
+//        }
+//
+//        sessionFactory.close();
+
+        // --------------------------------------------- HQL -----------------------------------------------------
+
+//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+//                .configure("hibernate.cfg.xml").build();
+//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
+//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
+//
+//        Session session = sessionFactory.openSession();
+//
+//        String hql = "From " + Course.class.getSimpleName() + " Where price > 120000";
+//        List<Course> coursesList =  session.createQuery(hql).getResultList();
+//
+//        for (Course course : coursesList) {
+//            System.out.println(course.getName() + " - " + course.getPrice());
+//        }
+//
+//        sessionFactory.close();
+
+        // ----------------------------------------- Задание №10.1 -------------------------------------------------
+
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure("hibernate.cfg.xml").build();
         Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
@@ -184,17 +245,11 @@ public class main {
 
         Session session = sessionFactory.openSession();
 
-        CriteriaBuilder builder = session.getCriteriaBuilder();
-        CriteriaQuery<Course> query = builder.createQuery(Course.class);
-        Root<Course> root = query.from(Course.class);
-        query.select(root);
-        List<Course> coursesList = session.createQuery(query).getResultList();
-        for (Course course : coursesList) {
-            System.out.println(course.getName());
-        }
+      LinkedPurchaseList linkedPurchaseList = session.get(LinkedPurchaseList.class, new Key(1,2));
+
+
 
         sessionFactory.close();
-
 
     }
 }

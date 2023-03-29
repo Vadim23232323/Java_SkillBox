@@ -15,7 +15,7 @@ public class Course {
     @Column(columnDefinition = "enum")
     private CourseType type;
     private String description;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Teacher teacher;
     @Column(name = "students_count", nullable = true)
     private Integer studentCount;
