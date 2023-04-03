@@ -1,7 +1,5 @@
 import core.Line;
 import core.Station;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,9 +12,6 @@ import java.util.Scanner;
 
 public class Main
 {
-
-    private static Logger logger;
-    private static Logger loggerExceptions;
     private static String dataFile = "src/main/resources/map.json";
     private static Scanner scanner;
 
@@ -24,30 +19,21 @@ public class Main
 
     public static void main(String[] args)
     {
-        logger = LogManager.getRootLogger();
-
-        loggerExceptions = LogManager.getLogger();
-
         RouteCalculator calculator = getRouteCalculator();
 
-        System.out.println("Программа расчёта маршрутов метрополитена Санкт-Петербурга\n");
+        System.out.println("РџСЂРѕРіСЂР°РјРјР° СЂР°СЃС‡С‘С‚Р° РјР°СЂС€СЂСѓС‚РѕРІ РјРµС‚СЂРѕРїРѕР»РёС‚РµРЅР° РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРіР°\n");
         scanner = new Scanner(System.in);
         for(;;)
         {
-            try {
-                Station from = takeStation("Введите станцию отправления:");
-                Station to = takeStation("Введите станцию назначения:");
+            Station from = takeStation("Р’РІРµРґРёС‚Рµ СЃС‚Р°РЅС†РёСЋ РѕС‚РїСЂР°РІР»РµРЅРёСЏ:");
+            Station to = takeStation("Р’РІРµРґРёС‚Рµ СЃС‚Р°РЅС†РёСЋ РЅР°Р·РЅР°С‡РµРЅРёСЏ:");
 
-                List<Station> route = calculator.getShortestRoute(from, to);
-                System.out.println("Маршрут:");
-                printRoute(route);
+            List<Station> route = calculator.getShortestRoute(from, to);
+            System.out.println("РњР°СЂС€СЂСѓС‚:");
+            printRoute(route);
 
-                System.out.println("Длительность: " +
-                        RouteCalculator.calculateDuration(route) + " минут");
-            } catch (Exception ex) {
-                loggerExceptions.warn("информацию об исключениях: " + ex);
-            }
-
+            System.out.println("Р”Р»РёС‚РµР»СЊРЅРѕСЃС‚СЊ: " +
+                RouteCalculator.calculateDuration(route) + " РјРёРЅСѓС‚");
         }
     }
 
@@ -68,8 +54,8 @@ public class Main
                 Line nextLine = station.getLine();
                 if(!prevLine.equals(nextLine))
                 {
-                    System.out.println("\tПереход на станцию " +
-                        station.getName() + " (" + nextLine.getName() + " линия)");
+                    System.out.println("\tРџРµСЂРµС…РѕРґ РЅР° СЃС‚Р°РЅС†РёСЋ " +
+                        station.getName() + " (" + nextLine.getName() + " Р»РёРЅРёСЏ)");
                 }
             }
             System.out.println("\t" + station.getName());
@@ -85,11 +71,9 @@ public class Main
             String line = scanner.nextLine().trim();
             Station station = stationIndex.getStation(line);
             if(station != null) {
-                logger.info("Станция: " + line + " существует!");
                 return station;
             }
-            logger.error("Станция не найдена: " + line);
-            System.out.println("Станция не найдена :(");
+            System.out.println("РЎС‚Р°РЅС†РёСЏ РЅРµ РЅР°Р№РґРµРЅР° :(");
         }
     }
 
