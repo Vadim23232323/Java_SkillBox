@@ -28,7 +28,7 @@ public class Main
 
 
 
-        // Заданине N7.2.1 Выведит в консоль с помощью Stream API сотрудника с максимальной зарплатой среди тех, кто пришёл в 2017 году.
+        // Заданине N7.2.1 Выведит в консоль с помощью Stream API сотрудника с максимальной зарплатой среди тех, кто пришёл в 2017 году. 
         Date year = new SimpleDateFormat(dateFormat).parse("01.01.2017");
         System.out.println("Работники устроенные в 2017 году: ");
         staff.stream().filter(employee -> employee.getWorkStart().compareTo(year) == 1).
@@ -169,11 +169,7 @@ public class Main
                     System.out.println("Wrong line: " + line);
                     continue;
                 }
-                staff.add(new Employee(
-                    fragments[0],
-                    Integer.parseInt(fragments[1]),
-                    (new SimpleDateFormat(dateFormat)).parse(fragments[2])
-                ));
+                staff.add(new Employee(fragments[0], Integer.parseInt(fragments[1]), (new SimpleDateFormat(dateFormat)).parse(fragments[2])));
             }
         }
         catch (Exception ex) {
