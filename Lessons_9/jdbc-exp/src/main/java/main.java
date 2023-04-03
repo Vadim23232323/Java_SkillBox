@@ -1,3 +1,4 @@
+import jakarta.persistence.Query;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -70,21 +71,6 @@ public class main {
 //        } catch (Exception ex) {
 //
 //        }
-
-
-        // ------------------------------- Hibernate - подключение и настройка -------------------------------------
-
-//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-//                .configure("hibernate.cfg.xml").build();
-//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
-//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
-//
-//        Session session = sessionFactory.openSession();
-//
-//        Course course = session.get(Course.class, 1);
-//        System.out.println(course.getName());
-//
-//        sessionFactory.close();
 
 
         // ------------------------------- Hibernate - подключение и настройка -------------------------------------
@@ -236,7 +222,7 @@ public class main {
 //
 //        sessionFactory.close();
 
-        // ----------------------------------------- Задание №10.1 -------------------------------------------------
+        // ----------------------------------------- Задание №10.4 -------------------------------------------------
 
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure("hibernate.cfg.xml").build();
@@ -245,9 +231,18 @@ public class main {
 
         Session session = sessionFactory.openSession();
 
-      LinkedPurchaseList linkedPurchaseList = session.get(LinkedPurchaseList.class, new Key(1,2));
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<PurchaseList> purchaseListQuery = builder.createQuery(PurchaseList.class);
+        Root<PurchaseList> root = purchaseListQuery.from(PurchaseList.class);
+        purchaseListQuery.select(root);
+        List<PurchaseList> purchaseList = session.createQuery(purchaseListQuery).getResultList();
 
+        for (PurchaseList purchase : purchaseList) {
 
+            LinkedPurchaseList linkedPurchaseList = new LinkedPurchaseList(
+                    new Key(course.getId, student.getId), purchase.getStudentName(), purchase.getCourseName());
+            session.save(linkedPurchaseList);
+       }
 
         sessionFactory.close();
 

@@ -6,11 +6,11 @@ import java.util.Objects;
 public class Key implements Serializable {
 
     @Column(name = "student_id")
-    private int studentId;
+    private Integer studentId;
     @Column(name = "course_id")
-    private int courseId;
+    private Integer courseId;
 
-    public Key(int studentId, int courseId){
+    public Key(Integer studentId, Integer courseId){
         this.studentId = studentId;
         this.courseId = courseId;
     }

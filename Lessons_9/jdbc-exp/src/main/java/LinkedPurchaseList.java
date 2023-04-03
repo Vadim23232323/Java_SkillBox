@@ -6,11 +6,22 @@ public class LinkedPurchaseList {
 
     @EmbeddedId
     private Key id;
-    @Column(name = "student_id", insertable = false, updatable = false)
-    private Integer studentId;
 
-    @Column(name = "course_id", insertable = false, updatable = false)
-    private Integer courseId;
+    @JoinColumn(name = "student_id", updatable = false, insertable = false)
+    private String student;
+
+    @JoinColumn(name = "course_id", updatable = false, insertable = false)
+    private String course;
+
+    public LinkedPurchaseList() {
+
+    }
+
+    public LinkedPurchaseList(Key id, String student, String course) {
+        this.id = id;
+        this.student = student;
+        this.course = course;
+    }
 
     public Key getId() {
         return id;
@@ -20,20 +31,20 @@ public class LinkedPurchaseList {
         this.id = id;
     }
 
-    public Integer getStudentId() {
-        return studentId;
+    public String getStudent() {
+        return student;
     }
 
-    public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
+    public void setStudent(String student) {
+        this.student = student;
     }
 
-    public Integer getCourseId() {
-        return courseId;
+    public String getCourse() {
+        return course;
     }
 
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+    public void setCourse(String course) {
+        this.course = course;
     }
 
 }
