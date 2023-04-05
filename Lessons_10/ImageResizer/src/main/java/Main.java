@@ -1,14 +1,14 @@
 import java.io.File;
+import java.util.Vector;
 
-public class Main
-{
+public class Main {
 
     private static int NEW_WIDTH = 300;
     private static final String SRC_FOLDER = "data\\src\\";
     private static final String DST_FOLDER = "data\\dst\\";
+    private static Vector<Double> numbers = new Vector<Double>();
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         File srcDir = new File(SRC_FOLDER);
         long start = System.currentTimeMillis();
         File[] files = srcDir.listFiles();
@@ -49,35 +49,129 @@ public class Main
         // ------------------------------------- Задание 11.1 ----------------------------------------------
 
         // Получаем количество ядер ПК
-        int numOfCores = Runtime.getRuntime().availableProcessors();
-        System.out.println("Количество ядер процессора: " + numOfCores);
+//        int numOfCores = Runtime.getRuntime().availableProcessors();
+//        System.out.println("Количество ядер процессора: " + numOfCores);
+//
+//        // Получаем остаток от деления кол-во файлов на количество ядер
+//        int remainder = files.length  % numOfCores;
+//
+//        // Распределения обработки файлов между потоками
+//        int[] filesToThreads = new int[numOfCores];
+//        // System.out.println("Начальный остаток: " + remainder);
+//
+//        for(int i = 0; i < numOfCores; i++){
+//            filesToThreads[i] = files.length / numOfCores;
+//            System.out.println("Значение массива filesToThreads " + "[" + i + "]: " + filesToThreads[i]);
+//            if (remainder > 0) {
+//                filesToThreads[i]++;
+//                remainder--;
+//            }
+//        }
+//
+//        // Передаем массив файлов в метод для уменьшения размера файлов
+//        System.out.println("Размер масива filesToThreads: " + filesToThreads.length);
+//        int srcPos = 0;
+//        for(int i = 0; i < filesToThreads.length; i++) {
+//            File[] files1 = new File[filesToThreads[i]];
+//            System.arraycopy(files, srcPos, files1, 0, filesToThreads[i]);
+//            ImageResizer imageResizer = new ImageResizer(files1, NEW_WIDTH, DST_FOLDER, start);
+//            imageResizer.start();
+//            srcPos = srcPos + filesToThreads[i];
+//        }
 
-        // Получаем остаток от деления кол-во файлов на количество ядер
-        int remainder = files.length  % numOfCores;
 
-        // Распределения обработки файлов между потоками
-        int[] filesToThreads = new int[numOfCores];
-        // System.out.println("Начальный остаток: " + remainder);
+        // ------------------------------------- Атомарные переменные ----------------------------------------
 
-        for(int i = 0; i < numOfCores; i++){
-            filesToThreads[i] = files.length / numOfCores;
-            System.out.println("Значение массива filesToThreads " + "[" + i + "]: " + filesToThreads[i]);
-            if (remainder > 0) {
-                filesToThreads[i]++;
-                remainder--;
-            }
-        }
+//        for (int i = 0; i < 4; i++) {
+//            new Thread(()->{
+//                for (int j = 0; j < 100000; j++) {
+//                    ValueStorage.IncrementValue();
+//                }
+//                System.out.println(ValueStorage.getValue());
+//            }).start();
+//        }
 
-        // Передаем массив файлов в метод для уменьшения размера файлов
-        System.out.println("Размер масива filesToThreads: " + filesToThreads.length);
-        int srcPos = 0;
-        for(int i = 0; i < filesToThreads.length; i++) {
-            File[] files1 = new File[filesToThreads[i]];
-            System.arraycopy(files, srcPos, files1, 0, filesToThreads[i]);
-            ImageResizer imageResizer = new ImageResizer(files1, NEW_WIDTH, DST_FOLDER, start);
-            imageResizer.start();
-            srcPos = srcPos + filesToThreads[i];
-        }
+        // ------------------------------------- Ключевое слово Volatile ----------------------------------------
+
+//        Task task = new Task();
+//        new Thread(task).start();
+//
+//        Scanner scanner = new Scanner(System.in);
+//        scanner.nextLine();
+//
+//        task.stop();
+//        System.out.println("Main: " + task.getCounterValue());
+
+
+        // --------------------------------------- Synchronized-методы ----------------------------------------
+
+//        ArrayList<Thread> threads = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            threads.add(new Thread(Main::someHeavyMethod));
+//        }
+//        threads.forEach(t -> t.start());
+//    }
+//
+//    private static synchronized void someHeavyMethod(){
+//        for (int i = 0; i < 100000; i++) {
+//            numbers.add(Math.random() / Math.random());
+//        }
+//        System.out.println(numbers.size());
+//        numbers.clear();
+//    }
+
+        // --------------------------------------- Synchronized-блоки ----------------------------------------
+
+//        ArrayList<Thread> threads = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            threads.add(new Thread(Main::someHeavyMethod));
+//        }
+//        threads.forEach(t -> t.start());
+//    }
+//
+//    private static void someHeavyMethod(){
+//        for (int i = 0; i < 10; i++) {
+//            double value = Math.random() / Math.random();
+//           synchronized (numbers) {
+//               numbers.add(value);
+//           }
+//        }
+//        System.out.println(numbers.size());
+//        numbers.clear();
+//    }
+
+        // --------------------------------------- методы Wait и Notify ----------------------------------------
+
+//        Parking parking = new Parking();
+//
+//        Thread thread1 = new Thread(new Producer(parking));
+//        Thread thread2 = new Thread(new Consumer(parking));
+//
+//        thread1.start();
+//        thread2.start();
+
+        // ------------- Потокобезопасные классы Vector, StringBuffer, Collections.synchronized  --------------
+
+//        ArrayList<Thread> threads = new ArrayList<>();
+//        for (int i = 0; i < 100; i++) {
+//            threads.add(new Thread(()->{
+//                for (int j = 0; j < 100000; j++) {
+//                    numbers.add(Math.random());
+//                }
+//                System.out.println(numbers.size());
+//            }));
+//        }
+//        threads.forEach((Thread::start));
+
+
+
+        // ------------------------------------ Взаимная блокировка — Deadlock  ---------------------------------------
+
+        final Friend vasya = new Friend("Вася");
+        final Friend vitya = new Friend("Витя");
+
+        new Thread(()->vasya.throwBallTo(vitya)).start();
+        new Thread(()->vitya.throwBallTo(vasya)).start();
 
     }
 }
