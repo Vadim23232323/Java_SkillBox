@@ -1,0 +1,62 @@
+       URL             |     Method    |              Description
+      /todolist/       |      GET      |  Список задач (дел)
+      /todolist/ID     |      GET      |  Конкретная задача
+      /todolist/       |     POST      |  Добавление новой задачи
+      /todolist/ID     |      PUT      |  Сохранение изменений задачи
+      /todolist/ID     |     PATCH     |  Сохранение изменений отдельный свойств задачи
+      /todolist/ID     |     DELETE    |  Удаление задачи
+      
+      
+      JSON формат запросов и ответов
+      
+      GET /todolist/21
+      
+      {
+            "id": 21,
+            "authorId": 13
+            "description": Помыть машину
+            "date": 21.04.2023
+      }
+
+       GET /todolist/
+
+            {
+                  "id": 1,
+                  "authorId": 3,
+                  "description": "Заправить машину",
+                  "date": 25.04.2023
+            }
+
+            ....
+
+            {
+                  "id": 21,
+                  "authorId": 13,
+                  "description": "Помыть машину",
+                  "date": 03.05.2023
+            }
+
+       POST /todolist/
+
+            {
+                   "id": 2,
+                   "description": "Забрать посылки",
+                   "date": 27.04.2023
+            }
+
+       PATCH /todolist/1
+
+            {
+                    "id": 1,
+                    "authorId": 2,
+                    "description": "Забрать письма",
+                    "date": 28.04.2023
+            }
+
+       DELETE /todolist/2
+
+            {
+                    "id": 1,
+                    "description": "Забрать письма",
+                    "date": 28.04.2023
+            }
