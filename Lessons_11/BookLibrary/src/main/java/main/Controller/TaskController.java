@@ -1,4 +1,4 @@
-package main;
+package main.Controller;
 
 import main.model.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class BookController {
+public class TaskController {
 
     @Autowired
     private BookRepository bookRepository;

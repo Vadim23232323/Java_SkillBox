@@ -170,6 +170,11 @@ hr{
     box-sizing:content-box;
     height:0
 }
+.line {
+    border: none; /* убираем границу по умолчанию */
+    border-top: 1px solid black; /* задаем черную горизонтальную линию толщиной 1px */
+}
+
 pre{
     overflow:auto
 }
@@ -308,7 +313,7 @@ img{
     border-radius:50%
 }
 hr{
-    margin-top:20px;
+    margin-top:5px;
     margin-bottom:20px;
     border:0;
     border-top:1px solid #eee
@@ -5079,7 +5084,6 @@ a:active,a:focus,a:hover,button:active,button:focus,button:hover{
     -webkit-transition:background-color .2s ease;
     transition:background-color .2s ease;
     text-transform:uppercase;
-    margin-left: 10px;
     
 }
 .button:hover,a.button:hover{
@@ -5107,7 +5111,7 @@ a:active,a:focus,a:hover,button:active,button:focus,button:hover{
 .header{
     background-color:#ffffff;
     background-position:center center;
-    min-height:700px;
+    min-height:740px;
     height:100vh;
     position:relative;
     background-size:cover;
@@ -5137,6 +5141,9 @@ a:active,a:focus,a:hover,button:active,button:focus,button:hover{
 }
 .header .header-top.header__head {
     text-align:center;
+}
+.header .header__date {
+    text-align:left;
 }
 .header .logo{
     display:block;
@@ -5501,11 +5508,12 @@ a:active,a:focus,a:hover,button:active,button:focus,button:hover{
 }
 
 .form__head{
+    text-align: center;
     text-transform:uppercase;
-    font-size:17px;
+    font-size:19px;
     font-family:RobotoBold,sans-serif;
     color:#ffcb5be6;
-    margin:0
+    margin:10px;
 }
 .form .form__desc{
     margin-top:0;
@@ -5527,7 +5535,8 @@ form.form_width{
 }
 
 .form textarea{
-    height:80px
+    height:80px;
+
 }
 .form .button{
     text-align:center;
@@ -5752,6 +5761,17 @@ form.form_width{
     border: 1px solid #ccc;
 }
 
+#book-form textarea {
+    resize: none;
+    width: 100%;
+    height: 100px;
+}
+
+#book-form .button{
+    text-align: center;
+    width: 100%;
+}
+
 #book-form .fa{
 padding: 5px 10px;
 font-size: 120px;
@@ -5760,11 +5780,11 @@ font-size: 120px;
 #book-form form {
     background-color: white;
     border-radius: 5px;
-    width: 420px;
+    width: 600px;
     padding: 35px;
 }
 
-#book-form input:focus,.form textarea:focus{
+#book-form input:focus, textarea:focus{
     border:2px solid #ffcb5be6;
     outline:0
 }
@@ -5785,4 +5805,9 @@ h4 {
     margin-bottom: 0;
 }
 
-
+.box {
+    border: 2px solid black; /* задаем черную границу шириной 2px */
+    border-radius: 10px; /* закругляем углы на 10px */
+    padding: 20px; /* добавляем отступы внутри рамки */
+    margin: 40px 200px;
+}
