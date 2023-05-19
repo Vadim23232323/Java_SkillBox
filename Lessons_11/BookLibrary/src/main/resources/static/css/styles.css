@@ -173,6 +173,7 @@ hr{
 .line {
     border: none; /* убираем границу по умолчанию */
     border-top: 1px solid black; /* задаем черную горизонтальную линию толщиной 1px */
+    margin-left: 28px;
 }
 
 pre{
@@ -4458,7 +4459,7 @@ hr{
     margin:0 auto;
     padding:20px
 }
-.white-popup-block .mfp-close{
+.white-popup-block .ed-del-button{
     position:absolute
 }
 .mfp-bg{
@@ -4517,7 +4518,7 @@ hr{
 .mfp-ajax-cur{
     cursor:progress
 }
-.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .mfp-close{
+.mfp-zoom-out-cur,.mfp-zoom-out-cur .mfp-image-holder .ed-del-button{
     cursor:zoom-out
 }
 .mfp-zoom{
@@ -4527,7 +4528,7 @@ hr{
 .mfp-auto-cursor .mfp-content{
     cursor:auto
 }
-.mfp-arrow,.mfp-close,.mfp-counter,.mfp-preloader{
+.mfp-arrow,.ed-del-button,.mfp-counter,.mfp-preloader{
     -webkit-user-select:none;
     -moz-user-select:none;
     -ms-user-select:none;
@@ -4562,13 +4563,12 @@ hr{
 .mfp-s-error .mfp-content{
     display:none
 }
-button.mfp-arrow,button.mfp-close{
+button.mfp-arrow,button{
     overflow:visible;
     cursor:pointer;
     background:0 0;
     border:0;
     -webkit-appearance:none;
-    display:block;
     outline:0;
     padding:0;
     z-index:1046;
@@ -4581,32 +4581,26 @@ button::-moz-focus-inner{
     padding:0;
     border:0
 }
-.mfp-close{
+.ed-del-button{
     width:44px;
     height:44px;
-    line-height:44px;
-    position:absolute;
-    right:0;
-    top:0;
-    text-decoration:none;
-    text-align:center;
-    opacity:.65;
-    padding:0 0 18px 10px;
-    color:#fff;
+    padding:13px 10px 0px 0px;
+    margin-left:-30px;
+    color:#ffcb5be6;
     font-style:normal;
-    font-size:28px;
+    font-size:35px;
     font-family:Arial,Baskerville,monospace
 }
-.mfp-close:focus,.mfp-close:hover{
+.ed-del-button:focus,.ed-del-button:hover{
     opacity:1
 }
-.mfp-close:active{
+.ed-del-button:active{
     top:1px
 }
-.mfp-close-btn-in .mfp-close{
+.ed-del-button-btn-in .ed-del-button{
     color:#333
 }
-.mfp-iframe-holder .mfp-close,.mfp-image-holder .mfp-close{
+.mfp-iframe-holder .ed-del-button,.mfp-image-holder .ed-del-button{
     color:#fff;
     right:-6px;
     text-align:right;
@@ -4691,7 +4685,7 @@ button::-moz-focus-inner{
     width:100%;
     max-width:900px
 }
-.mfp-iframe-holder .mfp-close{
+.mfp-iframe-holder .ed-del-button{
     top:-40px
 }
 .mfp-iframe-scaler{
@@ -4803,7 +4797,7 @@ img.mfp-img{
         right:5px;
         top:3px
     }
-    .mfp-img-mobile .mfp-close{
+    .mfp-img-mobile .ed-del-button{
         top:0;
         right:0;
         width:35px;
@@ -5052,11 +5046,17 @@ li,menu,ul{
     margin:0;
     list-style-type:none
 }
+.ed-del-button:active,.ed-del-button:focus,.ed-del-button:hover{
+    text-decoration:none;
+    color:#111111;
+    outline:0
+}
 a:active,a:focus,a:hover,button:active,button:focus,button:hover{
     text-decoration:none;
     color:#fff;
     outline:0
 }
+
 .before,.footer::before,.header::before,.services .services__card::before{
     position:absolute;
     content:"";
@@ -5084,9 +5084,24 @@ a:active,a:focus,a:hover,button:active,button:focus,button:hover{
     -webkit-transition:background-color .2s ease;
     transition:background-color .2s ease;
     text-transform:uppercase;
-    
 }
-.button:hover,a.button:hover{
+
+.clear-button,a.clear-button {
+    display:inline-block;
+    padding:10px 30px;
+    margin: 14px 0px 15px 30px;
+    color:#fff;
+    background-color:#ffcb5be6;
+    border:none;
+    border-radius: 5px;
+    cursor:pointer;
+    -webkit-transition:background-color .2s ease;
+    transition:background-color .2s ease;
+    text-transform:uppercase;
+    font-size: 16px;
+}
+
+.button:hover,a.button:hover, .clear-button:hover, a.clear-button:hover{
     background-color:#312e29
 }
 .s-gray{
@@ -5143,7 +5158,7 @@ a:active,a:focus,a:hover,button:active,button:focus,button:hover{
     text-align:center;
 }
 .header .header__date {
-    text-align:left;
+    text-align:right;
 }
 .header .logo{
     display:block;
@@ -5211,11 +5226,11 @@ a:active,a:focus,a:hover,button:active,button:focus,button:hover{
     outline:0
 }
 
-.book-l {
-    text-align: left;
-    font-size:2em;
+.todo-l {
+    text-align: justify;
+    font-size:1em;
     margin:.67em 0;
-    padding: 35px;
+    padding: 0px 32px;
 }
 .flex-center{
     padding-top: 100px;
@@ -5752,6 +5767,11 @@ form.form_width{
     background-color: #88888878;
 }
 
+#save-book, #save-todo-edit {
+    display: none;
+    justify-content: center;
+}
+
 #book-form form input {
     display: block;
     width: 100%;
@@ -5808,6 +5828,7 @@ h4 {
 .box {
     border: 2px solid black; /* задаем черную границу шириной 2px */
     border-radius: 10px; /* закругляем углы на 10px */
-    padding: 20px; /* добавляем отступы внутри рамки */
-    margin: 40px 200px;
+    padding: 15px 30px 0px 0px; /* добавляем отступы внутри рамки */
+    margin: 40px 10px;
+    min-width: 300px;
 }

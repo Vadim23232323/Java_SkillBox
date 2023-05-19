@@ -18,15 +18,13 @@ import java.util.Calendar;
 @Controller
 public class DefaultController {
 
-    DateFormat format = new SimpleDateFormat("MM.dd.yyyy");
+    DateFormat format = new SimpleDateFormat("dd.MM.yyyy");
     Calendar date = Calendar.getInstance();
 
     String currentDate;
     @Autowired
     private BookRepository bookRepository;
 
-    @Value("${someParameter}")
-    private Integer someParametr;
 
     @RequestMapping("/")
     public String index(Model model){

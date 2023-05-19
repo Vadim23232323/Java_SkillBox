@@ -33,17 +33,22 @@ public class TaskController {
         return newBook.getId();
     }
 
-//    @DeleteMapping("/books/{id}")
-//    public ResponseEntity get(@PathVariable int id) {
-//
-//        Optional<Book> optionalBook = bookRepository.findById(id);
-//        if (!optionalBook.isPresent()) {
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-//        } else {
-//            bookRepository.deleteById(id);
-//            return  new ResponseEntity(optionalBook.get(), HttpStatus.OK);
-//        }
-//    }
+    @DeleteMapping("/books/{id}")
+    public ResponseEntity<String> deleteTaskById(@PathVariable int id) {
+        Optional<Book> book = bookRepository.findById(id);
+        if (book== null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        } else {
+            bookRepository.deleteById(id);
+            return ResponseEntity.status(HttpStatus.OK).body("Deleting task by ID = " + id);
+        }
+    }
+
+    @DeleteMapping("/books/")
+    public ResponseEntity<String> deleteAllTasks() {
+        bookRepository.deleteAll();
+        return ResponseEntity.status(HttpStatus.OK).body("Deleting all tasks");
+    }
 
     @GetMapping("/books/{id}")
     public ResponseEntity get(@PathVariable int id){
@@ -54,5 +59,24 @@ public class TaskController {
         }
         return  new ResponseEntity(optionalBook.get(), HttpStatus.OK);
     }
+
+    @PutMapping("/books/{id}")
+    public ResponseEntity<String> updateBook(@PathVariable int id, @RequestBody Book updatedBook) {
+        Optional<Book> optionalBook = bookRepository.findById(id);
+
+        if (!optionalBook.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
+        Book existingBook = optionalBook.get();
+        existingBook.setId(updatedBook.getId());
+        existingBook.setName(updatedBook.getName());
+        existingBook.setDescription(updatedBook.getDescription());
+
+        bookRepository.save(existingBook);
+
+        return ResponseEntity.status(HttpStatus.OK).body("Updating Book by ID = " + id);
+    }
+
 
 }

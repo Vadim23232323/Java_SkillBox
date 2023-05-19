@@ -13,7 +13,8 @@ public class Book {
    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    private int year;
+
+    private String description;
 
     public int getId() {
         return id;
@@ -31,12 +32,12 @@ public class Book {
         this.name = name;
     }
 
-    public int getYear() {
-        return year;
+    public String getDescription() {
+        return description;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 
