@@ -11,6 +11,7 @@ public class MainForm {
     private JButton countButton;
     private JButton clearButton;
 
+
     public MainForm(){
         clearButton.addActionListener(new Action() {
             @Override
